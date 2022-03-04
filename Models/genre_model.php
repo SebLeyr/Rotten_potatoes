@@ -44,6 +44,20 @@
         }
 
         //read
+
+        public function getId_genreByName(){
+            $myQuery = 'SELECT
+                            id_genre
+                        FROM
+                            '.$this->table.'
+                        WHERE
+                            nom_genre = :nom_genre';
+            
+            $stmt = $this->connect->prepare($myQuery);
+            $stmt->bindParam(':nom_genre', $this->nom_genre);
+            return $stmt->execute();
+        }
+
         public function readGenre(){
             $myQuery = 'SELECT 
                             * 
@@ -64,7 +78,7 @@
                             nom_genre = :nom_genre';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('nom_genre', $this->nom_genre);
+            $stmt->bindParam(':nom_genre', $this->nom_genre);
             $stmt->execute();
             return $stmt;
         }

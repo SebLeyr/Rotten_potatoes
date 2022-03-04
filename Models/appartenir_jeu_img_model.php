@@ -70,7 +70,7 @@
                             id_jeu = :id_jeu';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('id_jeu', $this->id_jeu);
+            $stmt->bindParam(':id_jeu', $this->id_jeu);
             $stmt->execute();
             return $stmt;
         }
@@ -84,7 +84,7 @@
                             id_img = :id_img';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('id_img', $this->id_img);
+            $stmt->bindParam(':id_img', $this->id_img);
             $stmt->execute();
             return $stmt;
         }
@@ -100,8 +100,8 @@
                             id_img = :id_img';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('id_jeu', $this->id_jeu);
-            $stmt->bindParam('id_img', $this->id_img);
+            $stmt->bindParam(':id_jeu', $this->id_jeu);
+            $stmt->bindParam(':id_img', $this->id_img);
             $stmt->execute();
             return $stmt;
         }

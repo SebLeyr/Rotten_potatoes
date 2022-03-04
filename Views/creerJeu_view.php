@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <title>Rotten potatoes : reviews de jeux vidéos par la communauté pour la communauté</title>
     <link rel="stylesheet" href="./template.css">
+    <link rel="stylesheet" href="./creerJeu.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap" rel="stylesheet">
@@ -48,7 +49,31 @@
                         <?= $plateformeList ?>
                     </select>
                     <button id="morePlateformes">+</button>
-                    <div id="tabPlateforme"></div>
+
+                    <!-- <select id="plateforme1" name="plateforme1">
+                        <?= $plateformeList ?>
+                    </select>
+                    <button id="morePlateformes1">+</button>
+
+                    <select id="plateforme2" name="plateforme2">
+                        <?= $plateformeList ?>
+                    </select>
+                    <button id="morePlateformes2">+</button>
+
+                    <select id="plateforme3" name="plateforme3">
+                        <?= $plateformeList ?>
+                    </select>
+                    <button id="morePlateformes3">+</button>
+
+                    <select id="plateforme4" name="plateforme4">
+                        <?= $plateformeList ?>
+                    </select>
+                    <button id="morePlateformes4">+</button>
+
+                    <select id="plateforme5" name="plateforme5">
+                        <?= $plateformeList ?>
+                    </select>
+                    <button id="morePlateformes5">+</button> -->
                 </li>
                 <li>
                     <label for="genre">Genres</label>
@@ -95,7 +120,7 @@
     ?>
 
     <script src="../Views/Scripts/CreerCompte.js"></script>
-    <script src="./Scripts/multiChoisesForm.js"></script>
+    <!-- <script src="./Scripts/multiChoisesForm.js"></script> -->
 
 </body>
 </html>

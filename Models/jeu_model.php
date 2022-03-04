@@ -119,7 +119,7 @@
                             nom_jeu = :nom_jeu';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('nom_jeu', $this->nom_jeu);
+            $stmt->bindParam(':nom_jeu', $this->nom_jeu);
             $stmt->execute();
             return $stmt;
         }

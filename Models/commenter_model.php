@@ -77,7 +77,7 @@
                             id_jeu = :id_jeu';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('id_jeu', $this->id_jeu);
+            $stmt->bindParam(':id_jeu', $this->id_jeu);
             $stmt->execute();
             return $stmt;
         }
@@ -91,7 +91,7 @@
                             id_util = :id_util';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('id_util', $this->id_util);
+            $stmt->bindParam(':id_util', $this->id_util);
             $stmt->execute();
             return $stmt;
         }
@@ -107,8 +107,8 @@
                             id_util = :id_util';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('id_jeu', $this->id_jeu);
-            $stmt->bindParam('id_util', $this->id_util);
+            $stmt->bindParam(':id_jeu', $this->id_jeu);
+            $stmt->bindParam(':id_util', $this->id_util);
             $stmt->execute();
             return $stmt;
         }

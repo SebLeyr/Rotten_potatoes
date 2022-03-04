@@ -108,7 +108,7 @@
                             pseudo_util = :pseudo_util';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('pseudo_util', $this->pseudo_util);
+            $stmt->bindParam(':pseudo_util', $this->pseudo_util);
             $stmt->execute();
             return $stmt;
         }

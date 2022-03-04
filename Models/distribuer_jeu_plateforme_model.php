@@ -50,6 +50,7 @@
         }
 
         //read
+
         public function readDistrib(){
             $myQuery = 'SELECT 
                             * 
@@ -70,7 +71,7 @@
                             id_jeu = :id_jeu';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('id_jeu', $this->id_jeu);
+            $stmt->bindParam(':id_jeu', $this->id_jeu);
             $stmt->execute();
             return $stmt;
         }
@@ -84,7 +85,7 @@
                             id_plateforme = :id_plateforme';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('id_plateforme', $this->id_plateforme);
+            $stmt->bindParam(':id_plateforme', $this->id_plateforme);
             $stmt->execute();
             return $stmt;
         }
@@ -100,8 +101,8 @@
                             id_plateforme = :id_plateforme';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('id_jeu', $this->id_jeu);
-            $stmt->bindParam('id_plateforme', $this->id_plateforme);
+            $stmt->bindParam(':id_jeu', $this->id_jeu);
+            $stmt->bindParam(':id_plateforme', $this->id_plateforme);
             $stmt->execute();
             return $stmt;
         }

@@ -44,6 +44,19 @@
         }
 
         //read
+        public function getId_editeurByName(){
+            $myQuery = 'SELECT
+                            id_editeur
+                        FROM
+                            '.$this->table.'
+                        WHERE
+                            nom_editeur = :nom_editeur';
+            
+            $stmt = $this->connect->prepare($myQuery);
+            $stmt->bindParam(':nom_editeur', $this->nom_editeur);
+            return $stmt->execute();
+        }
+
         public function readEditeur(){
             $myQuery = 'SELECT 
                             * 
@@ -64,7 +77,7 @@
                             nom_editeur = :nom_editeur';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('nom_editeur', $this->nom_editeur);
+            $stmt->bindParam(':nom_editeur', $this->nom_editeur);
             $stmt->execute();
             return $stmt;
         }

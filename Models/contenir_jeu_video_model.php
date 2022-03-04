@@ -1,11 +1,11 @@
 <?php 
-    class Rattacher {
+    class Contenir {
         //attributs
         public $connect;
-        private $table ='rattacher';
+        private $table ='appartenir';
         
-        private $id_studio;
-        private $id_img;
+        private $id_jeu;
+        private $id_video;
 
         public function __construct(){
             $this->connect = new Bdd();
@@ -17,40 +17,40 @@
             return $this->table;
         }
     
-        public function getId_studio(){
-            return $this->id_studio;
+        public function getId_jeu(){
+            return $this->id_jeu;
         }
     
-        public function setId_studio($id_studio){
-            $this->id_studio = $id_studio;
+        public function setId_jeu($id_jeu){
+            $this->id_jeu = $id_jeu;
         }
     
-        public function getId_img(){
-            return $this->id_img;
+        public function getId_video(){
+            return $this->id_video;
         }
     
-        public function setId_img($id_img){
-            $this->id_img = $id_img;
+        public function setId_video($id_video){
+            $this->id_video = $id_video;
         }
-
+        
         //CRUD
 
         //create
-        public function createRattacher(){
+        public function createContenir(){
             $myQuery = 'INSERT INTO
                             '.$this->table.'
                         SET
-                            id_studio = :id_studio,
-                            id_img = :id_img';
+                            id_jeu = :id_jeu,
+                            id_video = :id_video';
             
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam(':id_studio', $this->id_studio);
-            $stmt->bindParam(':id_img', $this->id_img);
+            $stmt->bindParam(':id_jeu', $this->id_jeu);
+            $stmt->bindParam(':id_video', $this->id_video);
             return $stmt->execute();
         }
 
         //read
-        public function readRattacher(){
+        public function readContenir(){
             $myQuery = 'SELECT 
                             * 
                         FROM
@@ -61,66 +61,66 @@
             return $stmt;
         }
 
-        public function readRattacherJeu(){
+        public function readContenirJeu(){
             $myQuery = 'SELECT 
                             * 
                         FROM
                             '.$this->table.'
                         WHERE
-                            id_studio = :id_studio';
+                            id_jeu = :id_jeu';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam(':id_studio', $this->id_studio);
+            $stmt->bindParam(':id_jeu', $this->id_jeu);
             $stmt->execute();
             return $stmt;
         }
 
-        public function readRattacherImg(){
+        public function readContenirVideo(){
             $myQuery = 'SELECT 
                             * 
                         FROM
                             '.$this->table.'
                         WHERE
-                            id_img = :id_img';
+                            id_video = :id_video';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam(':id_img', $this->id_img);
+            $stmt->bindParam(':id_video', $this->id_video);
             $stmt->execute();
             return $stmt;
         }
 
-        public function readSingleRattacher(){
+        public function readSingleContenir(){
             $myQuery = 'SELECT 
                             * 
                         FROM
                             '.$this->table.'
                         WHERE
-                            id_studio = :id_studio
+                            id_jeu = :id_jeu
                         AND
-                            id_img = :id_img';
+                            id_video = :id_video';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam(':id_studio', $this->id_studio);
-            $stmt->bindParam(':id_img', $this->id_img);
+            $stmt->bindParam(':id_jeu', $this->id_jeu);
+            $stmt->bindParam(':id_video', $this->id_video);
             $stmt->execute();
             return $stmt;
         }
 
         //update
-        public function updateRattacher(){
+        public function updateContenir(){
             $myQuery = 'UPDATE
                             '.$this->table.'
                         SET
-                            id_img = :id_img
+                            id_video = :id_video
                         WHERE
-                            id_studio = :id_studio
+                            id_jeu = :id_jeu
                         AND
-                            id_img = :id_img2';
+                            id_video = :id_video2';
             
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam(':id_studio', $this->id_studio);
-            $stmt->bindParam(':id_img', $this->id_img);
-            $stmt->bindParam(':id_img2', $this->id_img);
+            $stmt->bindParam(':id_jeu', $this->id_jeu);
+            $stmt->bindParam(':id_video', $this->id_video);
+            $stmt->bindParam(':id_video2', $this->id_video);
             if($stmt->execute()) {
                 return true;
             } else {
@@ -129,14 +129,14 @@
         }
 
         //delete
-        public function deleteRattacherJeu(){
+        public function deleteContenirJeu(){
             $myQuery = 'DELETE FROM
                             '.$this->table.'
                         WHERE
-                            id_studio = :id_studio';
+                            id_jeu = :id_jeu';
             
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam(':id_studio', $this->id_studio);
+            $stmt->bindParam(':id_jeu', $this->id_jeu);
             if($stmt->execute()) {
                 return true;
             } else {
@@ -144,14 +144,14 @@
             }
         }
 
-        public function deleteRattacherImg(){
+        public function deleteContenirVideo(){
             $myQuery = 'DELETE FROM
                             '.$this->table.'
                         WHERE
-                            id_img = :id_img';
+                            id_video = :id_video';
             
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam(':id_img', $this->id_img);
+            $stmt->bindParam(':id_video', $this->id_video);
             if($stmt->execute()) {
                 return true;
             } else {

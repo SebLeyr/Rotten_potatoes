@@ -70,7 +70,7 @@
                             id_jeu = :id_jeu';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('id_jeu', $this->id_jeu);
+            $stmt->bindParam(':id_jeu', $this->id_jeu);
             $stmt->execute();
             return $stmt;
         }
@@ -84,7 +84,7 @@
                             id_genre = :id_genre';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('id_genre', $this->id_genre);
+            $stmt->bindParam(':id_genre', $this->id_genre);
             $stmt->execute();
             return $stmt;
         }
@@ -100,8 +100,8 @@
                             id_genre = :id_genre';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('id_jeu', $this->id_jeu);
-            $stmt->bindParam('id_genre', $this->id_genre);
+            $stmt->bindParam(':id_jeu', $this->id_jeu);
+            $stmt->bindParam(':id_genre', $this->id_genre);
             $stmt->execute();
             return $stmt;
         }

@@ -64,7 +64,7 @@
                             url_img = :url_img';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('url_img', $this->url_img);
+            $stmt->bindParam(':url_img', $this->url_img);
             $stmt->execute();
             return $stmt;
         }

@@ -64,7 +64,7 @@
                             nom_droit = :nom_droit';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('nom_droit', $this->nom_droit);
+            $stmt->bindParam(':nom_droit', $this->nom_droit);
             $stmt->execute();
             return $stmt;
         }

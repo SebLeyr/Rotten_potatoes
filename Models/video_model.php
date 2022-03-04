@@ -64,7 +64,7 @@
                             nom_video = :nom_video';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam('nom_video', $this->nom_video);
+            $stmt->bindParam(':nom_video', $this->nom_video);
             $stmt->execute();
             return $stmt;
         }
