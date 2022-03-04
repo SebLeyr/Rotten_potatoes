@@ -1,0 +1,136 @@
+/*------------------------------BODY--------------------------------*/
+
+#container {
+    display: flex;
+    flex-direction: column;
+}
+
+/*------------gestion des images------------*/
+.imgNote {
+    height: 20px;
+    width: 20px;
+}
+
+a:visited{
+    color: black;
+}
+a:active {
+    text-decoration: underline; /*marche pas--------------------------------------*/
+}
+/*------------------------------------------*/
+
+h2 {
+    font-family: Neusa,Impact,Helvetica Neue,Arial,Sans-Serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    padding-left: 9px;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    margin-left: 15px;
+}
+
+h2:before {
+    position: absolute;
+    content: "";
+    height: 1.2em;
+    border-left: 5px solid rgb(146, 105, 17);
+    margin: -1px 0 0 -9px;
+}
+
+.titre {
+    display: flex;
+    margin-left: 10px;
+    justify-content: space-between;
+    max-width: 350px;
+}
+
+.titre a {
+    align-self: center;
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/*---------------Les nouvelles sorties, Prochainement---------------*/
+
+.carousel {
+    display: flex;
+    flex-direction: row;
+    margin-left: 25px;
+    margin-bottom: 15px;
+    max-width: 970px;
+    /*overflow: hidden;*/
+}
+
+.carousel div{
+    display: flex;
+    flex-direction: column;
+}
+
+.carousel p {
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+}
+
+.carousel .note {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+    height: 30px;
+}
+
+.carousel a {
+    text-decoration: none;
+    font-family: "Libre Franklin";
+    font-size: 0.95em;
+    color: rgb(14, 14, 14);
+}
+
+.carousel .date {
+    margin-top: 5px;
+    margin-bottom: 5PX;
+}
+
+/*miniatures dans les carousels*/
+.cover {
+    height: 300px;
+    width: 225px;
+    border-radius: 12px;
+    align-self: flex-start;
+    object-fit: cover;
+}
+
+.slide {
+    margin: 0 7px 0 7px;
+}
+
+.precedent .suivant {
+    bottom: 50%;
+}
+
+/*------------------------------------------------------------------*/
+/*--------------------liste "les plus populaires--------------------*/
+
+.containerList {
+    display: block;
+    max-width: 350px;
+    margin-top: 2%;
+}
+
+.containerList ul {
+    margin-left: 0;
+}
+
+.containerList li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #f3f3f3;
+    padding: 17px 3px;
+}
+
+.containerList p {
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+}

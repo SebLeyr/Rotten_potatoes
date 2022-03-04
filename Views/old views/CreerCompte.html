@@ -1,0 +1,53 @@
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+    <link rel="stylesheet" href="CreerCompte.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap" rel="stylesheet">
+</head>
+
+<body>
+    <div id="creaCompte" class="modal">
+        <div>
+            <header>
+                <span id="close">&times;</span>
+                <h3>S'inscrire sur Rotten Potatoes</h3>
+            </header>
+
+            <div>
+                <form id="login" method="POST" action="">
+                    <ul>
+                        <li>
+                            <label for="pseudo">Pseudo </label>
+                            <input type="text" name="pseudo" maxlength="20" id="pseudo"/>
+                        </li>
+                        <li>
+                            <label for="email">E-mail </label>
+                            <input type="email" name="email" id="email"/>
+                        </li>
+                        <li>
+                            <label for="mdp">Mot de passe </label>
+                            <input type="password" name="mdp" minlength="8" maxlength="25" id="mdp"/>
+                        </li>
+                        <li>
+                            <label for="confirmMdp">Confirmer le mot de passe </label>
+                            <input type="password" name="confirmMdp" minlength="8" maxlength="25" id="confirmMdp"/>
+                        </li>
+                        <li>
+                            <input type="checkbox" id="CondUtilisat">
+                            <label for="CondUtilisat">Je souhaite m'inscrire à la newletter du site </label>
+                        </li>
+                    </ul>
+                </form>
+            </div>
+            
+            <footer>
+                <input type="submit" name="Crea" value="Créer votre compte">
+                <p>Déjà un compte ?  Identifiez vous ici</p>
+            </footer>
+        </div>
+    </div>
+    <script src="./CreerCompte.js"></script>
+</html>

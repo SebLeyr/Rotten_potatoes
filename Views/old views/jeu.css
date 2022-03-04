@@ -1,0 +1,355 @@
+html, body {
+    font-size: 16px;
+    margin: 0;
+    background-color: rgba(250, 250, 249, 0.973);
+}
+
+/*------------------------------HEADER------------------------------*/
+
+header {
+    background-color: rgb(146, 105, 17);
+    display: flex;
+}
+
+/*barre de recherche*/
+input {
+    width: 50%;
+    height: 35px;
+    padding-left: 40px;
+    border-radius: 26px;
+    font-size: 1rem;
+    background: rgba(0,0,0,0.4);
+    margin: 40px 20px 25px 30px;
+    border: none;
+    
+}
+
+/*trouver comment insérer la loupe dans la searchbar*/
+
+[type="search"]::-webkit-search-cancel-button {
+    position: relative;
+    right: 10px;
+    /*trouver comment changer la couleur du bouton cancel search*/
+}
+
+input:focus {
+    color: white;
+}
+
+::placeholder {
+    color: white;
+}
+/*------------------*/
+
+nav {
+    display: flex;
+    flex-direction: column;
+    width: 150%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin: 0 10px 0 10px;
+}
+
+/*menu de connexion temporaire*/
+header ul:first-child {
+    font-family: "Franklin Gothic",-apple-system,BlinkMacSystemFont,"PT Sans",Arial,Sans-Serif;
+    font-size: inherit;
+    text-transform: uppercase;
+    color: white;
+    font-size: 0.9rem;
+    align-self: flex-end;
+}
+
+/*à garder quand le menu aura tous ses liens*/
+header ul:first-child a{
+    font-family: "Franklin Gothic",-apple-system,BlinkMacSystemFont,"PT Sans",Arial,Sans-Serif;
+    font-size: inherit;
+    text-transform: uppercase;
+    color: white;
+    font-size: 0.9rem;
+    align-self: flex-end;
+    text-decoration: none;
+}
+
+/*-à enveler une fois la création de compte opérationnelle, cache l'onglet "mon compte"-*/
+header ul:first-child li:nth-child(3) {
+    display: none;
+}
+/*--------------------------------------------------------------------------------------*/
+
+/*menu principal temporaire*/
+header ul:last-child {
+    color: #fff;
+    font-family: Impact;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-top: 2px;
+    justify-content: start;
+    letter-spacing: 0.5px;
+}
+
+/*à garder quand le menu aura tous ses liens*/
+header ul:last-child a{
+    color: #fff;
+    font-family: Impact;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-top: 2px;
+    justify-content: start;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+h1 {
+    font-family: Neusa,Impact,Helvetica Neue,Arial,Sans-Serif;
+    font-weight: 500;
+    font-size: 1.75rem;
+    padding-left: 9px;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+
+}
+
+/*------------------------------------------------------------------*/
+/*------------------------------BODY--------------------------------*/
+
+#container {
+    display: flex;
+}
+
+/*------------gestion des images------------*/
+.imgNote {
+    height: 20px;
+    width: 20px;
+}
+
+/*miniatures dans les carousels*/
+.cover {
+    max-height: 300px;
+    border-radius: 12px;
+    align-self: flex-start;
+}
+
+a:visited{
+    color: black;
+}
+a:active {
+    text-decoration: underline; /*marche pas--------------------------------------*/
+}
+/*------------------------------------------*/
+
+h2.catégorie {
+    font-family: Neusa,Impact,Helvetica Neue,Arial,Sans-Serif;
+    font-weight: 100;
+    font-size: 1.55rem;
+    padding-left: 9px;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    margin-left: 0px;
+    position: relative;
+    overflow:hidden;
+    width: 100%;
+    padding-left: 20px;
+}
+
+h2.catégorie:before {
+    position: absolute;
+    content: "";
+    height: 0.8em;
+    min-width: 25px;
+    background-color:rgb(146, 105, 17);
+    margin: 5px 0 0 -10px;
+    left: 0;
+}
+
+h2.catégorie:after {
+    position: absolute;
+    content: "";
+    height: 0.8em;
+    width: inherit;
+    min-width: 20px;
+    background-color:rgb(146, 105, 17);
+    margin: 5px 20px 0 10px;
+    box-sizing: border-box;
+}
+
+/*--------------------liste "les plus populaires--------------------*/
+.titre h2 {
+    font-family: Neusa,Impact,Helvetica Neue,Arial,Sans-Serif;
+    font-weight: 100;
+    font-size: 1.55rem;
+    padding-left: 9px;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    margin-left: 0px;
+}
+
+.titre h2:before {
+    position: absolute;
+    content: "";
+    height: 1.2em;
+    border-left: 5px solid rgb(146, 105, 17);
+    margin: -1px 0 0 -9px;
+}
+
+.titre {
+    display: flex;
+    margin-left: 10px;
+    justify-content: space-between;
+    max-width: 350px;
+}
+
+.titre a {
+    align-self: center;
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.containerList {
+    display: block;
+    max-width: 350px;
+    min-width: 350px;
+    margin-top: 2%;
+    border: 1px solid #cacaca;
+    margin: 10px 20px 20px;
+    height: fit-content;
+    padding-right: 8px;
+}
+
+.containerList ul {
+    margin-left: 0;
+}
+
+.containerList li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #f3f3f3;
+    padding: 17px 3px;
+}
+
+.containerList p {
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+}
+
+/*------------------------------------------------------------------*/
+/*------------------------------jeu---------------------------------*/
+
+.jeu {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+    margin-right: 20px;
+}
+
+.jeu li, p {
+    font-family: "Libre Franklin";
+}
+
+.jeu li:first-child {
+    font-size: 1.3em;
+}
+
+/*----lecteur youtube----*/
+.videoYT {
+    overflow:hidden;
+    padding-bottom:32%;
+    position:relative;
+    height:0;
+    margin-bottom: 10px;
+}
+.videoYT iframe{
+    left:0;
+    top:0;
+    height:100%;
+    width:100%;
+    position:absolute;
+}
+
+.jeu iframe {
+    max-width: 1072;
+    max-height: 566;
+    border-radius: 20px;
+    margin-top: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 13px 0 rgb(0 0 0 / 33%);
+}
+/*-----------------------*/
+
+#blocJeu {
+    display: flex;
+    margin-top: 5px;
+}
+
+.description {
+    background-color: rgb(221, 221, 221);
+    border-radius: 15px;
+    margin-left: 20px;
+}
+
+.note {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 3px;
+    height: 30px;
+    flex-wrap: wrap;
+}
+
+.description ul {
+    list-style: none;
+}
+.description li {
+    padding: 5px 10px 5px 0;
+}
+
+.jeu div p {
+    margin-left: 10px;
+}
+
+.carousel img {
+    max-height: 250px;
+    width: auto;
+}
+.carousel iframe {
+    max-height: 250px;
+    width: 445px;
+    border-radius: 2px;
+}
+/*------------------------------------------------------------------*/
+/*------------------------------------------------------------------*/
+/*------------------------------FOOTER------------------------------*/
+
+footer {
+    display: flex;
+    background-color: #2a2c32;
+    /*position: absolute; 
+    bottom: 0; 
+    width: 100%; */
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer li {
+    padding: 3px;
+}
+
+.footer_block {
+    font-family:"Libre Franklin";
+    font-stretch: condensed;
+    color: white;
+    padding: 5px;
+}
+
+/*------------------------------------------------------------------*/

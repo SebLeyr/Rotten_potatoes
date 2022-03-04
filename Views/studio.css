@@ -1,0 +1,150 @@
+/*------------------------------BODY--------------------------------*/
+
+#container {
+    display: flex;
+    flex: 1; /*permet d'étendre le contenu du container et mettre le footer en bas de page*/
+}
+
+.studio {
+    display:flex;
+    flex-direction: column;
+    margin-top: 10px;
+}
+
+.description {
+    display: flex;
+}
+
+/*------------gestion des images------------*/
+.description img {
+    max-height: 300px;
+}
+
+.imgNote {
+    height: 20px;
+    width: 20px;
+}
+/*------------------------------Jeux--------------------------------*/
+
+.description ul {
+    list-style: none;
+}
+
+.description li {
+    font-family: "Libre Franklin";
+    padding: 5px 10px 5px 0;
+}
+
+.jeu h2 {
+    font-family: Neusa,Impact,Helvetica Neue,Arial,Sans-Serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    padding-left: 9px;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    margin-left: 15px;
+}
+
+.jeu h2:before {
+    position: absolute;
+    content: "";
+    height: 1.2em;
+    border-left: 5px solid rgb(146, 105, 17);
+    margin: -1px 0 0 -9px;
+}
+
+.jeux {
+    display: block;
+    max-width: 350px;
+    min-width: 350px;
+    margin-top: 2%;
+    margin: 10px 20px 20px;
+    height: fit-content;
+    padding-right: 8px;
+}
+
+.jeux ul {
+    margin-left: 0;
+}
+
+.jeux li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #f3f3f3;
+    padding: 17px 3px;
+}
+
+.jeux a {
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    text-decoration: none;
+}
+
+.description li:first-child {
+    font-size: 1.3em;
+    font-weight: 800;
+}
+/*--------------------liste "les plus populaires--------------------*/
+
+.titre h2 {
+    font-family: Neusa,Impact,Helvetica Neue,Arial,Sans-Serif;
+    font-weight: 100;
+    font-size: 1.55rem;
+    padding-left: 9px;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    margin-left: 0px;
+}
+
+.titre h2:before {
+    position: absolute;
+    content: "";
+    height: 1.2em;
+    border-left: 5px solid rgb(146, 105, 17);
+    margin: -1px 0 0 -9px;
+}
+
+.titre {
+    display: flex;
+    margin-left: 10px;
+    justify-content: space-between;
+    max-width: 350px;
+}
+
+.titre a {
+    align-self: center;
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+.containerList {
+    display: block;
+    max-width: 350px;
+    min-width: 350px;
+    margin-top: 2%;
+    border: 1px solid #cacaca;
+    margin: 10px 20px 20px;
+    height: fit-content;
+    padding-right: 8px;
+}
+
+.containerList ul {
+    margin-left: 0;
+}
+
+.containerList li{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 20px;
+    margin-bottom: 0;
+    border-bottom: 1px solid #f3f3f3;
+    padding: 17px 3px;
+}
+
+.containerList p {
+    font-family: 'Franklin Gothic', 'Arial Narrow', Arial, sans-serif;
+}

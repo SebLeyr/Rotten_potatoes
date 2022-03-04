@@ -1,0 +1,148 @@
+html, body {
+    font-size: 16px;
+    margin: 0;
+    background-color: rgba(250, 250, 249, 0.973);
+    height: 100%;
+}
+
+/*------------------------------HEADER------------------------------*/
+
+header {
+    background-color: rgb(146, 105, 17);
+    display: flex;
+}
+
+/*barre de recherche*/
+input {
+    width: 50%;
+    height: 35px;
+    padding-left: 40px;
+    border-radius: 26px;
+    font-size: 1rem;
+    background: rgba(0,0,0,0.4);
+    margin: 40px 20px 25px 30px;
+    border: none;
+    
+}
+
+/*trouver comment insérer la loupe dans la searchbar*/
+
+[type="search"]::-webkit-search-cancel-button {
+    position: relative;
+    right: 10px;
+    /*trouver comment changer la couleur du bouton cancel search*/
+}
+
+input:focus {
+    color: white;
+}
+
+::placeholder {
+    color: white;
+}
+/*------------------*/
+
+nav {
+    display: flex;
+    flex-direction: column;
+    width: 150%;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+}
+
+nav li {
+    margin: 0 10px 0 10px;
+}
+
+/*menu de connexion temporaire*/
+header ul:first-child {
+    font-family: "Franklin Gothic",-apple-system,BlinkMacSystemFont,"PT Sans",Arial,Sans-Serif;
+    font-size: inherit;
+    text-transform: uppercase;
+    color: white;
+    font-size: 0.9rem;
+    align-self: flex-end;
+}
+
+/*à garder quand le menu aura tous ses liens*/
+header ul:first-child a{
+    font-family: "Franklin Gothic",-apple-system,BlinkMacSystemFont,"PT Sans",Arial,Sans-Serif;
+    font-size: inherit;
+    text-transform: uppercase;
+    color: white;
+    font-size: 0.9rem;
+    align-self: flex-end;
+    text-decoration: none;
+}
+
+/*-à enveler une fois la création de compte opérationnelle, cache l'onglet "mon compte"-*/
+header ul:first-child li:nth-child(3) {
+    display: none;
+}
+/*--------------------------------------------------------------------------------------*/
+
+/*menu principal temporaire*/
+header ul:last-child {
+    color: #fff;
+    font-family: Impact;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-top: 2px;
+    justify-content: start;
+    letter-spacing: 0.5px;
+}
+
+/*à garder quand le menu aura tous ses liens*/
+header ul:last-child a{
+    color: #fff;
+    font-family: Impact;
+    text-transform: uppercase;
+    font-size: 1.2rem;
+    margin-top: 2px;
+    justify-content: start;
+    letter-spacing: 0.5px;
+    text-decoration: none;
+}
+
+h1 {
+    font-family: Neusa,Impact,Helvetica Neue,Arial,Sans-Serif;
+    font-weight: 500;
+    font-size: 1.75rem;
+    padding-left: 9px;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+
+}
+
+/*------------------------------------------------------------------*/
+
+
+/*------------------------------FOOTER------------------------------*/
+
+footer {
+    display: flex;
+    background-color: #2a2c32;
+    /*position: absolute; 
+    bottom: 0; 
+    width: 100%; */
+}
+
+footer ul {
+    list-style: none;
+}
+
+footer li {
+    padding: 3px;
+}
+
+.footer_block {
+    font-family:"Libre Franklin";
+    font-stretch: condensed;
+    color: white;
+    padding: 5px;
+}
+
+/*------------------------------------------------------------------*/
