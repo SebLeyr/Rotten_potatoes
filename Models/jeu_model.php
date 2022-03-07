@@ -99,6 +99,11 @@
         }
 
         //read
+
+        public function getId_studioByName(){
+
+        }
+
         public function readJeu(){
             $myQuery = 'SELECT 
                             * 

@@ -59,10 +59,10 @@
         isset($_POST['genre']) &&
         isset($_POST['nbrJoueur']) &&
         isset($_POST['resume']) && 
-        isset($_FILE['jaquette']) &&
+        isset($_FILES['jaquette']) &&
         isset($_POST['trailer'])) {
 
-            var_dump($_POST);
+            var_dump($_POST['nom']);
             //stockage des valeur avec vérification (suppression des caractères spéciaux, slashs, espaces)
             $nom = $verif->valid_donnees($_POST['nom']);
             $date = $verif->valid_donnees($_POST['date']);
@@ -101,7 +101,7 @@
                 $newjeu->setNombre_de_joueurs($nbrJoueur);
                 $newjeu->setResume_jeu($resume);
 
-                $req = $jeu->createJeu();
+                $req = $newjeu->createJeu();
 
                 //insertion association distribuer(jeu/plateforme)
                 $distrib->setId_jeu($newjeu->connect->lastInsertId());
@@ -110,23 +110,25 @@
                 $req = $distrib->createDistrib();
 
                 //insertion association associer(jeu/genre)
-                $assos->setId_jeu($newjeu->connect->lastInsertId()());
+                $assos->setId_jeu($newjeu->connect->lastInsertId());
                 $assos->setId_genre($genreId);
 
                 $req = $distrib->createDistrib();
 
                 //insertion jaquette
-                $newimg->setUrl_img("../images/$nomJqt");
+                if($nomJqt != ""){
+                    $newimg->setUrl_img("../images/$nomJqt");
 
-                $req = $newimg->createImage();
-                //stockage jaquette
-                $fichier = move_uploaded_file($tmpNomJqt, "../images/$nomJqt");
+                    $req = $newimg->createImage();
+                    //stockage jaquette
+                    $fichier = move_uploaded_file($tmpNomJqt, "../images/$nomJqt");
 
-                //insertion association appartenir(jeu/image)
-                $appart->setId_jeu($newjeu->connect->lastInsertId());
-                $appart->setId_img($newimg->connect->lastInsertId());
+                    //insertion association appartenir(jeu/image)
+                    $appart->setId_jeu($newjeu->connect->lastInsertId());
+                    $appart->setId_img($newimg->connect->lastInsertId());
 
-                $req = $appart->createAppart();
+                    $req = $appart->createAppart();
+                }
 
                 //insertion trailer
                 $newVideo->setNom_video($trailer);
@@ -137,17 +139,19 @@
                 $contient->setId_video($newVideo->connect->lastInsertId());
 
                 //insertion image
-                $newimg->setUrl_img("../images/$nomImg");
+                if($nomImg != ""){
+                    $newimg->setUrl_img("../images/$nomImg");
 
-                $req = $newimg->createImage();
-                //stockage image
-                $fichier = move_uploaded_file($tmpNomImg, "../images/$nomImg");
+                    $req = $newimg->createImage();
+                    //stockage image
+                    $fichier = move_uploaded_file($tmpNomImg, "../images/$nomImg");
 
-                //insertion association appartenir(jeu/image)
-                $appart->setId_jeu($newjeu->connect->lastInsertId());
-                $appart->setId_img($newimg->connect->lastInsertId());
+                    //insertion association appartenir(jeu/image)
+                    $appart->setId_jeu($newjeu->connect->lastInsertId());
+                    $appart->setId_img($newimg->connect->lastInsertId());
 
-                $req = $appart->createAppart();
+                    $req = $appart->createAppart();
+                }
 
                 //insertion video
                 $newVideo->setNom_video($video);

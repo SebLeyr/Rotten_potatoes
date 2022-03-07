@@ -21,7 +21,7 @@
 
     <container>
         <h2>Ajouter un jeu</h2>
-        <form id="creaJeu" method="POST" action="">
+        <form id="creaJeu" method="POST" enctype="multipart/form-data">
             <ul>
                 <li>
                     <label for="nom">Nom</label>
@@ -51,27 +51,27 @@
                     <button id="morePlateformes">+</button>
 
                     <!-- <select id="plateforme1" name="plateforme1">
-                        <?= $plateformeList ?>
+                        ?= $plateformeList ?>
                     </select>
                     <button id="morePlateformes1">+</button>
 
                     <select id="plateforme2" name="plateforme2">
-                        <?= $plateformeList ?>
+                        ?= $plateformeList ?>
                     </select>
                     <button id="morePlateformes2">+</button>
 
                     <select id="plateforme3" name="plateforme3">
-                        <?= $plateformeList ?>
+                        ?= $plateformeList ?>
                     </select>
                     <button id="morePlateformes3">+</button>
 
                     <select id="plateforme4" name="plateforme4">
-                        <?= $plateformeList ?>
+                        ?= $plateformeList ?>
                     </select>
                     <button id="morePlateformes4">+</button>
 
                     <select id="plateforme5" name="plateforme5">
-                        <?= $plateformeList ?>
+                        ?= $plateformeList ?>
                     </select>
                     <button id="morePlateformes5">+</button> -->
                 </li>
@@ -88,7 +88,7 @@
                 </li>
                 <li>
                     <label for="resume">Résumé</label>
-                    <textarea name="resume" form="creaJeu" id="resume">Résumé du jeu...</textarea>
+                    <textarea name="resume" form="creaJeu" id="resume" placeholder="Résumé du jeu..."></textarea>
                 </li>
                 <li>
                     <label for="jaquette">Jaquette du jeu</label>

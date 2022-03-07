@@ -45,17 +45,18 @@
 
         //read
 
+        //à corriger
         public function getId_plateformeByName(){
             $myQuery = 'SELECT
                             id_plateforme
                         FROM
                             '.$this->table.'
                         WHERE
-                            nom_plateforme = :nom_plateforme';
+                            nom_plateforme = '.$this->nom_plateforme.'';
             
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam(':nom_plateforme', $this->nom_plateforme);
-            return $stmt->execute();
+            $stmt->execute();
+            return $stmt;
         }
 
         public function readPlateforme(){

@@ -45,17 +45,18 @@
 
         //read
 
+        //à corriger
         public function getId_studioByName(){
             $myQuery = 'SELECT
                             id_studio
                         FROM
                             '.$this->table.'
                         WHERE
-                            nom_studio = :nom_studio';
+                            nom_studio = '.$this->nom_studio.'';
             
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam(':nom_studio', $this->nom_studio);
-            return $stmt->execute();
+            $stmt->execute();
+            return $stmt;
         }
 
         public function readStudio(){
