@@ -1,14 +1,13 @@
 <?php 
-    class Utilisateur {
+    class User {
         //attributs
         public $connect;
-        private $table ='utilisateurs';
+        private $table ='users';
         
-        private $id_util;
-        private $pseudo_util;
-        private $date_util;
-        private $email_util;
-        private $mot_de_passe_util;
+        private $id_user;
+        private $pseudo_user;
+        private $email_user;
+        private $password_user;
         private $id_droit;
 
         public function __construct(){
@@ -21,43 +20,35 @@
             return $this->table;
         }
     
-        public function getId_util(){
-            return $this->id_util;
+        public function getId_user(){
+            return $this->id_user;
         }
     
-        public function getPseudo_util(){
-            return $this->pseudo_util;
+        public function getPseudo_user(){
+            return $this->pseudo_user;
         }
     
-        public function setPseudo_util($pseudo_util){
-            $this->pseudo_util = $pseudo_util;
+        public function setPseudo_user($pseudo_user){
+            $this->pseudo_user = $pseudo_user;
         }
     
-        public function getDate_util(){
-            return $this->date_util;
+        public function getEmail_user(){
+            return $this->email_user;
         }
     
-        public function setDate_util($date_util){
-            $this->date_util = $date_util;
+        public function setEmail_user($email_user){
+            $this->email_user = $email_user;
         }
     
-        public function getEmail_util(){
-            return $this->email_util;
+        public function getPassword_user(){
+            return $this->password_user;
         }
     
-        public function setEmail_util($email_util){
-            $this->email_util = $email_util;
+        public function setPassword_user($password_user){
+            $this->password_user = $password_user;
         }
     
-        public function getMot_de_passe_util(){
-            return $this->mot_de_passe_util;
-        }
-    
-        public function setMot_de_passe_util($mot_de_passe_util){
-            $this->mot_de_passe_util = $mot_de_passe_util;
-        }
-    
-        public function getId_Utilisateur(){
+        public function getId_droit(){
             return $this->id_droit;
         }
     
@@ -68,27 +59,25 @@
         //CRUD
 
         //create
-        public function createUtilisateur(){
+        public function createUser(){
             $myQuery = 'INSERT INTO
                             '.$this->table.'
                         SET
-                            pseudo_util = :pseudo_util,
-                            date_util = :date_util,
-                            email_util = :email_util,
-                            mot_de_passe_util = :mot_de_passe_util,
+                            pseudo_user = :pseudo_user,
+                            email_user = :email_user,
+                            password_user = :password_user,
                             id_droit = :id_droit';
             
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam(':pseudo_util', $this->pseudo_util);
-            $stmt->bindParam(':date_util', $this->date_util);
-            $stmt->bindParam(':email_util', $this->email_util);
-            $stmt->bindParam(':mot_de_passe_util', $this->mot_de_passe_util);
+            $stmt->bindParam(':pseudo_user', $this->pseudo_user);
+            $stmt->bindParam(':email_user', $this->email_user);
+            $stmt->bindParam(':password_user', $this->password_user);
             $stmt->bindParam(':id_droit', $this->id_droit);
             return $stmt->execute();
         }
 
         //read
-        public function readUtilisateur(){
+        public function getUser(){
             $myQuery = 'SELECT 
                             * 
                         FROM
@@ -99,46 +88,42 @@
             return $stmt;
         }
 
-        public function readSingleUtilisateur(){
+        public function getSingleUser(){
             $myQuery = 'SELECT 
                             * 
                         FROM
                             '.$this->table.'
                         WHERE
-                            pseudo_util = :pseudo_util';
+                            id_user = :id_user';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam(':pseudo_util', $this->pseudo_util);
+            $stmt->bindParam(':id_user', $this->id_user);
             $stmt->execute();
             return $stmt;
         }
 
         //update
-        public function updateUtilisateur(){
+        public function updateUser(){
             $myQuery = 'UPDATE
                             '.$this->table.'
                         SET
-                            pseudo_util = :pseudo_util,
-                            date_util = :date_util,
-                            email_util = :email_util,
-                            mot_de_passe_util = :mot_de_passe_util,
+                            pseudo_user = :pseudo_user,
+                            email_user = :email_user,
+                            password_user = :password_user,
                             id_droit = :id_droit
                         WHERE
-                            pseudo_util = :pseudo_util2,
-                            date_util = :date_util2,
-                            email_util = :email_util2,
-                            mot_de_passe_util = :mot_de_passe_util2,
+                            pseudo_user = :pseudo_user2,
+                            email_user = :email_user2,
+                            password_user = :password_user2,
                             id_droit = :id_droit2';
             
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam(':pseudo_util', $this->pseudo_util);
-            $stmt->bindParam(':pseudo_util2', $this->pseudo_util);
-            $stmt->bindParam(':date_util', $this->date_util);
-            $stmt->bindParam(':date_util2', $this->date_util);
-            $stmt->bindParam(':email_util', $this->email_util);
-            $stmt->bindParam(':email_util2', $this->email_util);
-            $stmt->bindParam(':mot_de_passe_util', $this->mot_de_passe_util);
-            $stmt->bindParam(':mot_de_passe_util2', $this->mot_de_passe_util);
+            $stmt->bindParam(':pseudo_user', $this->pseudo_user);
+            $stmt->bindParam(':pseudo_user2', $this->pseudo_user);
+            $stmt->bindParam(':email_user', $this->email_user);
+            $stmt->bindParam(':email_user2', $this->email_user);
+            $stmt->bindParam(':password_user', $this->password_user);
+            $stmt->bindParam(':password_user2', $this->password_user);
             $stmt->bindParam(':nom_droit', $this->nom_droit);
             $stmt->bindParam(':nom_droit2', $this->nom_droit);
             if($stmt->execute()) {
@@ -149,19 +134,51 @@
         }
 
         //delete
-        public function deleteUtilisateur(){
+        public function deleteUser(){
             $myQuery = 'DELETE FROM
                             '.$this->table.'
                         WHERE
-                            pseudo_util = :pseudo_util';
+                            pseudo_user = :pseudo_user';
             
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam(':pseudo_util', $this->pseudo_util);
+            $stmt->bindParam(':pseudo_user', $this->pseudo_user);
             if($stmt->execute()) {
                 return true;
             } else {
                 return false;
             }
+        }
+
+        // verify if pseudo already exist
+        public function verifyPseudo() {
+            $myQuery = 'SELECT
+                            *
+                        FROM
+                            '.$this->table.'
+                        WHERE
+                            pseudo_user = :pseudo_user';
+
+            $stmt = $this->connect->prepare($myQuery);
+
+            $stmt->bindParam(':pseudo_user', $this->pseudo_user);
+            $stmt->execute();
+            return $stmt;
+        }
+
+        // verify if mail already exist
+        public function verifyMail() {
+            $myQuery = 'SELECT
+                            *
+                        FROM
+                            '.$this->table.'
+                        WHERE
+                            email_user = :email_user';
+
+            $stmt = $this->connect->prepare($myQuery);
+
+            $stmt->bindParam(':email_user', $this->email_user);
+            $stmt->execute();
+            return $stmt;
         }
     }
 ?>

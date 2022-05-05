@@ -1,3 +1,6 @@
+<?php
+    include('../Controllers/creer_compte_controller.php');
+?>
 <!-----------header------------>
 <header id="mainHeader">
         <h1>Rotten Potatoes</h1>
@@ -41,6 +44,10 @@
                             <input type="email" name="email" id="email"/>
                         </li>
                         <li>
+                            <label for="confEmail">Confirmer l'e-mail </label>
+                            <input type="email" name="confEmail" id="confEmail"/>
+                        </li>
+                        <li>
                             <label for="mdp">Mot de passe </label>
                             <input type="password" name="mdp" minlength="8" maxlength="25" id="mdp"/>
                         </li>
@@ -52,12 +59,13 @@
                             <input type="checkbox" id="CondUtilisat">
                             <label for="CondUtilisat">Je souhaite m'inscrire à la newletter du site </label>
                         </li>
+                        <p><strong><?php echo $log; ?></strong></p>
+                        
+                        <input type="submit" name="Crea" value="Créer votre compte">
                     </ul>
                 </form>
             </div>
-            
             <footer>
-                <input type="submit" name="Crea" value="Créer votre compte"> <!--vérifier si le fait qu'il soit en dehors du form ne pose pas de prob-->
                 <p>Déjà un compte ?  Identifiez vous ici</p>
             </footer>
         </div>

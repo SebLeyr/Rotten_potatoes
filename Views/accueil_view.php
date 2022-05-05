@@ -26,7 +26,7 @@
                 <!--boutton précédent-->
                 <!-- <div class="precedent" onclick="changeslide(-1)">&#10094;</div> -->
                 <div class="slide">
-                    <img class="cover" src="./image/ex nouv sortie.jpg">
+                    <img class="cover" src="../images/Sable.jpg">
                     <div class="note">
                         <img class="imgNote" src="../images/potatoe.png">
                         <p>note</p>
@@ -35,7 +35,7 @@
                 </div>
 
                 <div class="slide">
-                    <img class="cover" src="./image/Icarus.jpg">
+                    <img class="cover" src="../images/Icarus.jpg">
                     <div class="note">
                         <img class="imgNote" src="../images/potatoe.png">
                         <p>note</p>
@@ -44,45 +44,45 @@
                 </div>
 
                 <div class="slide">
-                    <img class="cover" src="./image/death stranding.jpg">
+                    <img class="cover" src="../images/death stranding.jpg">
                     <div class="note">
-                        <img class="imgNote" src="./image/potatoe.png">
+                        <img class="imgNote" src="../images/potatoe.png">
                         <p>note</p>
                     </div>
                     <a href="./Jeu.html">Death Stranding</a>
                 </div>
 
                 <div class="slide">
-                    <img class="cover" src="./image/Halo_Infinite.png">
+                    <img class="cover" src="../images/Halo_Infinite.png">
                     <div class="note">
-                        <img class="imgNote" src="./image/potatoe.png">
+                        <img class="imgNote" src="../images/potatoe.png">
                         <p>note</p>
                     </div>
                     <a href="./Jeu.html">Halo infinite</a>
                 </div>
 
                 <div class="slide">
-                    <img class="cover" src="./image/Solar_Ash.jpg">
+                    <img class="cover" src="../images/Solar_Ash.jpg">
                     <div class="note">
-                        <img class="imgNote" src="./image/potatoe.png">
+                        <img class="imgNote" src="../images/potatoe.png">
                         <p>note</p>
                     </div>
                     <a href="./Jeu.html">Solar ash</a>
                 </div>
 
                 <div class="slide">
-                    <img class="cover" src="./image/The_Gunk.jpg">
+                    <img class="cover" src="../images/The_Gunk.jpg">
                     <div class="note">
-                        <img class="imgNote" src="./image/potatoe.png">
+                        <img class="imgNote" src="../images/potatoe.png">
                         <p>note</p>
                     </div>
                     <a href="./Jeu.html">The Gunk</a>
                 </div>
 
                 <div class="slide">
-                    <img class="cover" src="./image/Final_Fantasy_XIV_Endwalker.jpg">
+                    <img class="cover" src="../images/Final_Fantasy_XIV_Endwalker.jpg">
                     <div class="note">
-                        <img class="imgNote" src="./image/potatoe.png">
+                        <img class="imgNote" src="../images/potatoe.png">
                         <p>note</p>
                     </div>
                     <a href="./Jeu.html">Final Fantasy XIV: Endwalker</a>
@@ -98,7 +98,7 @@
             </div>
             <div class="carousel">
                 <div>
-                    <img class="cover" src="./image/ex proch.jpg">
+                    <img class="cover" src="../images/ex proch.jpg">
                     <p class="date">28 Octobre 2021</p>
                     <a href="">Age of empire IV</a>
                 </div>
@@ -112,23 +112,23 @@
             <ul>
                 <li>
                     <p>lien jeu populaire</p>
-                    <img class="imgNote" src="./image/potatoe.png">
+                    <img class="imgNote" src="../images/potatoe.png">
                 </li>
                 <li>
                     <p>lien jeu populaire2</p>
-                    <img class="imgNote" src="./image/potatoe.png">
+                    <img class="imgNote" src="../images/potatoe.png">
                 </li>
                 <li>
                     <p>lien jeu populaire3</p>
-                    <img class="imgNote" src="./image/potatoe.png">
+                    <img class="imgNote" src="../images/potatoe.png">
                 </li>
                 <li>
                     <p>lien jeu populaire4</p>
-                    <img class="imgNote" src="./image/potatoe.png">
+                    <img class="imgNote" src="../images/potatoe.png">
                 </li>
                 <li>
                     <p>lien jeu populaire5</p>
-                    <img class="imgNote" src="./image/potatoe.png">
+                    <img class="imgNote" src="../images/potatoe.png">
                 </li>
             </ul>
         </div>
@@ -137,6 +137,6 @@
         include('../Views/footer.php');
     ?>
     <script src="../Views/Scripts/CreerCompte.js"></script>
-    <script src="carousel.js"></script>
+    <!--<script src="carousel.js"></script>-->
 </body>
 </html>
