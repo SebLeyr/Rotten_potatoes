@@ -27,23 +27,23 @@
         // ensuite je vérifie que password et confPassword sont identiques
         if($passwordUser !== $confPassword) {
             // je passe une valeur à la variable $msg pour traiter cette erreur
-            $log = 'Passwords must match';
+            $log = 'Les mots de passe doivent correspondre';
         } else {
             // je vérifie si la valeur de $mail est bien un mail grâce à la fonction filter_var
             // qui prend la donnée en paramètre ainsi que FILTER_VALIDATE_EMAIL pour demander la vérification
             if(!filter_var($mailUser, FILTER_VALIDATE_EMAIL)){
                 // je passe une valeur à la variable $msg pour traiter cette erreur
-                $log = "E-mail isn't correct";
+                $log = "L'E-mail est incorrect";
             }
             // et je renouvelle cette opération pour la valeur de la variable $confMail
             else if(!filter_var($confMail, FILTER_VALIDATE_EMAIL)){
                 // je passe une valeur à la variable $msg pour traiter cette erreur
-                $log = "E-mail confirmation isn't correct";
+                $log = "L'E-mail de confirmation est incorrect";
             }
             // je vérifie maintenant que les mails sont  identiques
             else if($mailUser !== $confMail){
                 // je passe une valeur à la variable $msg pour traiter cette erreur
-                $log = "E-mails must match";
+                $log = "les E-mails doivent correspondres";
             } else {
                 // Ici je vais vérifier les champs suivants : $pseudo, email et $mdp.
                 // Afin de sécuriser nos données nous allons effectuer des traitements à nos variables
@@ -78,13 +78,13 @@
                 $nbrLignes = $checkMail->rowCount();
 
                 if($nbrLignes > 0) {
-                    $log = "E-mail already used, please try with another one";
+                    $log = "E-mail déjà utilisé";
                 } else {
                     $checkPseudo = $newUser->verifyPseudo();
                     $nbrLignes = $checkPseudo->rowCount();
 
                     if($nbrLignes > 0) {
-                        $log = "Pseudo already used, please try with another one";
+                        $log = "Pseudo déjà utilisé";
                     } else {
                         if($newUser->createUser()){
                             $myReturn = $newUser->getSingleUser();
@@ -94,21 +94,20 @@
                                 $log = "Something went wrong, please contact an administrator";
 
                             } else if($nbrUsers >1){
-                                $log ="Mail already used, please use another one";
+                                $log ="Mail déjà utilisé";
 
                             } else if ($nbrUsers == 1) {
-                                echo '<script language="javascript">';
-                                echo "Account created with success";
-                                echo '</script>';
+                                echo '<script>alert("Compte créé avec succès")</script>';
 
-                                while($rowUser = $myReturn->fetch()){
-                                    extract($rowUser);
-                                    $success = 1;
-                                    $log = "User created with success";
-                                    $data['id_user'] = intval($rowUser['id_user'], 10);
-                                    $data['nom_user'] = $rowUser['nom_user'];
-                                    $data['prenom_user'] = $rowUser['prenom_user'];
-                                }
+                                //à rétablir si besoin des données utilisateur dans une variable
+                                // while($rowUser = $myReturn->fetch()){
+                                //     extract($rowUser);
+                                //     $success = 1;
+                                //     $log = "User created with success";
+                                //     $data['id_user'] = intval($rowUser['id_user'], 10);
+                                //     $data['nom_user'] = $rowUser['nom_user'];
+                                //     $data['prenom_user'] = $rowUser['prenom_user'];
+                                // }
                             }
                         } else {
                             $log = "Error during the register";

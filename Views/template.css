@@ -249,6 +249,7 @@ footer li {
     width: auto;
     padding: 0 10px 0 10px;
     font-size: 0.9em;
+    cursor: pointer;
 }
 
 /*---Footer---*/

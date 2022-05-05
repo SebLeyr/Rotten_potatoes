@@ -76,7 +76,7 @@
             return $stmt->execute();
         }
 
-        //read
+        //read all users
         public function getUser(){
             $myQuery = 'SELECT 
                             * 
@@ -88,16 +88,17 @@
             return $stmt;
         }
 
+        //read user by pseudo
         public function getSingleUser(){
             $myQuery = 'SELECT 
                             * 
                         FROM
                             '.$this->table.'
                         WHERE
-                            id_user = :id_user';
+                            pseudo_user = :pseudo_user';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam(':id_user', $this->id_user);
+            $stmt->bindParam(':pseudo_user', $this->pseudo_user);
             $stmt->execute();
             return $stmt;
         }
