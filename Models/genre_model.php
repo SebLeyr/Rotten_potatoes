@@ -59,6 +59,7 @@
             return $stmt;
         }
 
+        //read all types
         public function readGenre(){
             $myQuery = 'SELECT 
                             * 
@@ -70,6 +71,7 @@
             return $stmt;
         }
 
+        ////read one type by name
         public function readSingleGenre(){
             $myQuery = 'SELECT 
                             * 

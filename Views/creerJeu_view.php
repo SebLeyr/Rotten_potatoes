@@ -108,6 +108,7 @@
                     <input type="url" name="videos" pattern="https://.*" id="videos"/>
                     <button id="moreVid">+</button>
                 </li>
+                    <p><strong><?php echo $log; ?></strong></p>
                 <li>
                     <input type='submit' name='postJeu' value='Ajouter le jeu'>
                 </li>

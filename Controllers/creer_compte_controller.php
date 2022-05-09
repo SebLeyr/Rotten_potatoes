@@ -6,7 +6,7 @@
     $success = 0;
     $msg = "Une erreur est survenue dans le php";
     $data = [];
-// création de la variable de display info, laissé vide au start pour éviter des erreurs
+    // création de la variable de display info, laissé vide au start pour éviter des erreurs
     $log = "";
 
     if(isset($_POST['pseudo'])

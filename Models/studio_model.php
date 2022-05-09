@@ -59,6 +59,7 @@
             return $stmt;
         }
 
+        //read all studios
         public function readStudio(){
             $myQuery = 'SELECT 
                             * 
@@ -70,6 +71,7 @@
             return $stmt;
         }
 
+        //read one studio by name
         public function readSingleStudio(){
             $myQuery = 'SELECT 
                             * 

@@ -58,6 +58,7 @@
             return $stmt;
         }
 
+        //read all editors
         public function readEditeur(){
             $myQuery = 'SELECT 
                             * 
@@ -69,6 +70,7 @@
             return $stmt;
         }
 
+        //read one editor by name
         public function readSingleEditeur(){
             $myQuery = 'SELECT 
                             * 

@@ -59,6 +59,7 @@
             return $stmt;
         }
 
+        //read all platforms
         public function readPlateforme(){
             $myQuery = 'SELECT 
                             * 
@@ -70,6 +71,7 @@
             return $stmt;
         }
 
+        //read one platforms by name
         public function readSinglePlateforme(){
             $myQuery = 'SELECT 
                             * 
