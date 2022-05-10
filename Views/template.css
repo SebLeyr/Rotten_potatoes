@@ -265,6 +265,20 @@ footer li {
     margin-top: 20px;
 }
 /*------------------------------------------------------------------*/
+/*-------------------------modale connexion-------------------------*/
+#connexion {
+    cursor: pointer;
+}
+
+.modal-container #closeCo {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    padding-right: 20px;
+    cursor: pointer;
+}
+/*------------------------------------------------------------------*/
 /*----------------------------ANIMATION-----------------------------*/
 @keyframes slideTop {
     0% {

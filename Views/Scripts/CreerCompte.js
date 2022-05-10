@@ -1,9 +1,9 @@
-//récupérer la page de connexion
-var crea = document.querySelector(".modal");
-
+//récupérer la page de création de compte
+var crea = document.querySelector("#creaCompte");
 var back = crea.style.background;
+
 //récupérer la modale
-var modal = document.querySelector(".modal-container");
+var modal = document.querySelector("#modalCrea");
 
 //récupérer le bouton d'ouverture de la page
 var open = document.getElementById("creaCpt");
@@ -41,3 +41,43 @@ window.addEventListener("click", function(event) {
 //clean des formulaires apres submit
 // formPlat = document.getElementById("creaPlateforme").reset();
 // formGenre = document.getElementById("creaGenre").reset();
+
+//récupérer la page de connexion
+var connec = document.querySelector("#connexionCompte");
+var backCo = crea.style.background;
+
+//récupérer la modale
+var modalCo = document.querySelector("#modalCo");
+
+//récupérer le bouton d'ouverture de la page
+var openCo = document.getElementById("connexion");
+
+//récupérer le bouton de fermeture de la page
+var closeCo = document.getElementById("closeCo");
+
+//ouverture de la page avec le bouton
+openCo.addEventListener("click", function() {
+    connec.style.display = "flex";
+    connec.style.animation = "fadeIn 0.5s";
+    modalCo.style.animation = "slideTop 0.5s";
+})
+
+//fermeture de la page avec le bouton
+closeCo.addEventListener("click", function() {
+    connec.style.animation = "fadeOut 0.5s";
+    modalCo.style.animation = "slideOut 0.5s";
+    setTimeout(function() {
+        connec.style.display = "none";
+    }, 400);
+})
+
+//fermeture de la page avec le background
+window.addEventListener("click", function(event) {
+    if (event.target == connec) {
+        connec.style.animation = "fadeOut 0.5s";
+        modalCo.style.animation = "slideOut 0.5s";
+        setTimeout(function() {
+            connec.style.display = "none";
+        }, 400);
+    }
+})

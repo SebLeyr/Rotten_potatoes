@@ -62,7 +62,7 @@
         isset($_POST['genre']) &&
         isset($_POST['nbrJoueur']) &&
         isset($_POST['resume']) && 
-        //isset($_FILES['jaquette']) &&
+        isset($_FILES['jaquette']) &&
         isset($_POST['trailer'])) {
 
             //stockage des valeur avec vérification (suppression des caractères spéciaux, slashs, espaces)
@@ -146,9 +146,6 @@
                     $newVideo->setNom_video($trailer);
                     $newVideo->createVideo();
 
-                    $test = $newVideo->connect->lastInsertId();
-                    var_dump($test);
-                    
                     //insertion association contenir(jeu/video)
                     $contient->setId_jeu($newjeu->connect->lastInsertId());
                     $contient->setId_video($newVideo->connect->lastInsertId());

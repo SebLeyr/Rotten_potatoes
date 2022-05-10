@@ -2,7 +2,7 @@
     class Contenir {
         //attributs
         public $connect;
-        private $table ='appartenir';
+        private $table ='contenir';
         
         private $id_jeu;
         private $id_video;
