@@ -9,8 +9,9 @@
             <ul>
                 <!--<li><a href="./CreerCompte.html">Créer un compte</a></li>-->
                 <li id="creaCpt">Créer un compte</li>
-                <li>Se connecter</li>
-                <li>Mon compte</li>
+                <li id="connexion">Se connecter</li>
+                <li><?= $account ?></li>
+                <li><?= $connexion ?></li>
             </ul>
             <ul>
                 <li><a href="./accueil_view.php">Actualités</a></li>
@@ -26,7 +27,7 @@
 <!----------------------------->
 <!--Modale création de compte-->
     <div id="creaCompte" class="modal">
-        <div class="modal-container">
+        <div id="modalCrea" class="modal-container">
             <header>
                 <span id="close">&times;</span>
                 <h3>S'inscrire sur Rotten Potatoes</h3>
@@ -73,10 +74,10 @@
     </div>
 <!----------------------------->
 <!------Modale connexion------->
-<div id="connection" class="modal">
-        <div class="modal-container">
+<div id="connexionCompte" class="modal">
+        <div id="modalCo" class="modal-container">
             <header>
-                <span id="close">&times;</span>
+                <span id="closeCo">&times;</span>
                 <h3>Se connecter</h3>
             </header>
 
