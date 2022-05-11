@@ -1,3 +1,6 @@
+<?php
+    session_start();
+?>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
@@ -31,7 +34,7 @@
                         <img class="imgNote" src="../images/potatoe.png">
                         <p>note</p>
                     </div>
-                    <a href="./old views/Jeu.html">Sable</a>
+                    <a href="./jeu_view.php">Sable</a>
                 </div>
 
                 <div class="slide">

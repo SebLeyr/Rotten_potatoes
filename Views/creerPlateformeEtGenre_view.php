@@ -1,4 +1,7 @@
 <?php
+    session_start();
+?>
+<?php
     include('../Controllers/creerPlateformeEtGenre_controller.php');
 ?>
 <!DOCTYPE html>

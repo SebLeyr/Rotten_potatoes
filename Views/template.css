@@ -76,11 +76,6 @@ header ul:first-child a{
     align-self: flex-end;
     text-decoration: none;
 }
-
-/*-à enveler une fois la création de compte opérationnelle, cache l'onglet "mon compte"-*/
-header ul:first-child li:nth-child(3) {
-    display: none;
-}
 /*--------------------------------------------------------------------------------------*/
 
 /*menu principal temporaire*/

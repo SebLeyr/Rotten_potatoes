@@ -1,5 +1,6 @@
 <?php
     include_once('../Utilitaires/connec_bdd.php');
+    include_once('../Utilitaires/utilitaires.php');
     include_once('../Models/Utilisateur_model.php');
     include_once('../Models/droit_model.php');
     $user = new User();
@@ -16,10 +17,10 @@
 
         try{
             $user->setPseudo_user($pseudo);
-            $user->setMdpUser($password);
+            $user->setPassword_user($password);
 
             $req = $user->getSingleUser();
-            $reqTable = $user->getTable()
+            $reqTable = $user->getTable();
 
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());
@@ -55,8 +56,12 @@
     //affichage deconnexion et accès espace compte et affichage des données de session quand connecté
     if(isset($_SESSION['id'])){
 
-        //modification affichage lien liste parents/profs en fonction du type d'utilisateur
+        $pseudo = $_SESSION['pseudo'];
+        //modification affichage boutons créer compte et connexion
+        $account = '<a href="./monCompte_view.php">'.$pseudo.'</a>';
+        $connexion = '<form action="" method="POST"> <input type="submit" id="deconnexion" name="deconnexion" value="Déconnexion"></form>';
     } else {
-        $account = '';
+        $account = '<a id="creaCpt">Créer un compte</a>';
+        $connexion = '<a id="connexion">Se connecter</a>';
     }
 ?>

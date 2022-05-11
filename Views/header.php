@@ -1,5 +1,7 @@
 <?php
-    include('../Controllers/creer_compte_controller.php');
+    include_once('../Controllers/creer_compte_controller.php');
+    include_once('../Controllers/connexion_controller.php');
+    include_once('../Controllers/deconnexion_controller.php');
 ?>
 <!-----------header------------>
 <header id="mainHeader">
@@ -7,9 +9,6 @@
         <input id="search" type="search" placeholder="Rechercher un jeu, un studio...">
         <nav id="menu">
             <ul>
-                <!--<li><a href="./CreerCompte.html">Créer un compte</a></li>-->
-                <li id="creaCpt">Créer un compte</li>
-                <li id="connexion">Se connecter</li>
                 <li><?= $account ?></li>
                 <li><?= $connexion ?></li>
             </ul>
@@ -92,13 +91,12 @@
                             <label for="mdpLog">Mot de passe </label>
                             <input type="password" name="mdpLog" minlength="8" maxlength="25" id="mdpLog"/>
                         </li>
+                        <li>
+                            <input type="submit" name="Connec" value="S'identifier">
+                        </li>
                     </ul>
                 </form>
             </div>
-            
-            <footer>
-                <input type="submit" name="Connec" value="S'identifier"> <!--vérifier si le fait qu'il soit en dehors du form ne pose pas de prob-->
-            </footer>
         </div>
     </div>
 <!----------------------------->
