@@ -56,26 +56,27 @@ nav li {
     margin: 0 10px 0 10px;
 }
 
-/*menu de connexion temporaire*/
-header ul:first-child {
+/*menu de connexion*/
+header ul:first-child, header ul:first-child a {
     font-family: "Franklin Gothic",-apple-system,BlinkMacSystemFont,"PT Sans",Arial,Sans-Serif;
-    font-size: inherit;
-    text-transform: uppercase;
-    color: white;
-    font-size: 0.9rem;
-    align-self: flex-end;
-}
-
-/*à garder quand le menu aura tous ses liens*/
-header ul:first-child a{
-    font-family: "Franklin Gothic",-apple-system,BlinkMacSystemFont,"PT Sans",Arial,Sans-Serif;
-    font-size: inherit;
     text-transform: uppercase;
     color: white;
     font-size: 0.9rem;
     align-self: flex-end;
     text-decoration: none;
 }
+
+/*bouton déconnexion*/
+header ul:first-child input {
+    padding: none;
+    border: none;
+    background: none;
+    font-family: "Franklin Gothic",-apple-system,BlinkMacSystemFont,"PT Sans",Arial,Sans-Serif;
+    text-transform: uppercase;
+    color: white;
+    font-size: 0.9rem;
+    cursor: pointer;
+} 
 /*--------------------------------------------------------------------------------------*/
 
 /*menu principal temporaire*/
