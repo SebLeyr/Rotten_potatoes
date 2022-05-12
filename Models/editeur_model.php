@@ -20,6 +20,10 @@
         public function getId_editeur(){
             return $this->id_editeur;
         }
+
+        public function setId_editeur($id_editeur){
+            $this->id_editeur = $id_editeur;
+        }
     
         public function getNom_editeur(){
             return $this->nom_editeur;
@@ -45,6 +49,7 @@
 
         //read
         //à corriger
+        /*
         public function getId_editeurByName(){
             $myQuery = 'SELECT
                             id_editeur
@@ -56,7 +61,7 @@
             $stmt = $this->connect->prepare($myQuery);
             $stmt->execute();
             return $stmt;
-        }
+        }*/
 
         //read all editors
         public function readEditeur(){
@@ -81,6 +86,21 @@
 
             $stmt = $this->connect->prepare($myQuery);
             $stmt->bindParam(':nom_editeur', $this->nom_editeur);
+            $stmt->execute();
+            return $stmt;
+        }
+
+        //read one editor by id
+        public function readSingleEditeurById(){
+            $myQuery = 'SELECT 
+                            * 
+                        FROM
+                            '.$this->table.'
+                        WHERE
+                            id_editeur = :id_editeur';
+
+            $stmt = $this->connect->prepare($myQuery);
+            $stmt->bindParam(':id_editeur', $this->id_editeur);
             $stmt->execute();
             return $stmt;
         }

@@ -1,12 +1,15 @@
 <?php
     session_start();
 ?>
+<?php
+    include_once("../Controllers/jeu_controller.php");
+?>
 <html lang="fr">
 <head>
     <meta charset="UTF-8">
     <title>Rotten potatoes : reviews de jeux vidéos par la communauté pour la communauté</title>
     <link rel="stylesheet" href="./template.css">
-    <link rel="stylesheet" href="./accueil.css">
+    <link rel="stylesheet" href="./jeu.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap" rel="stylesheet">
@@ -54,33 +57,28 @@
                 <img class="cover" src="./image/ex nouv sortie.jpg">
                 <div class="description">
                     <ul>
-                        <li>Sable</li>
+                        <li><?= $nom_jeu ?></li>
                         <li>
                             <div class="note">
                                 <img class="imgNote" src="./image/potatoe.png">
                                 <p>note</p>
                             </div>
                         </li>
-                        <li>Studio : <a href="./Studio.html">Shedworks</a></li>
-                        <li>Éditeur : </li>
-                        <li>Date de sortie : </li>
-                        <li>Plateformes : </li>
+                        <li>Studio : <a href="http://localhost/Rotten_potatoes/Views/studio_view.php?nom=<?= $studio ?>"><?$studio?></a></li>
+                        <li>Éditeur : <?= $editeur ?></li>
+                        <li>Date de sortie : <?= $date_sortie ?></li>
+                        <li>Plateformes : <?= $plateforme ?></li>
                         <!--prix par plateforme-->
-                        <li>Genre : </li>
+                        <li>Genre : <?= $genre ?></li>
                         <li>multijoueurs : </li>
-                        <li>Nombre de joueurs : </li>
+                        <li>Nombre de joueurs : <?= $nbr_joueurs ?></li>
                         <!--lien wiki-->
                     </ul>
                 </div>
             </div>
             <div>
                 <h2 class="catégorie">Résumé</h2>
-                <p>Embarquez pour un inoubliable voyage en incarnant Sable au cours de sa quête initiatique, qui la conduira dans des déserts immenses et des paysages fascinants ornés de carcasses de vaisseaux spatiaux et de vestiges de merveilles d'un lointain passé.<br/>
-                    <br/>
-                    Explorez les dunes sur votre aérocycle, gravissez des ruines monumentales et croisez d'autres nomades, tout en découvrant les mystères enfouis de ce monde et en apprenant qui Sable est vraiment derrière son masque.<br/>
-                    <br/>
-                    Plongez dans le monde de Sable et explorez-le à votre guise, en profitant de sa direction artistique unique et de sa bande originale composée par Japanese Breakfast. Ses secrets n'attendent que d'être découverts. Plongez sans crainte dans cet univers.
-                </p>
+                <p><?= $resume ?></p>
             </div>
             <div>
                 <h2 class="catégorie">Vidéos</h2>

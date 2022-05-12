@@ -34,7 +34,7 @@
                         <img class="imgNote" src="../images/potatoe.png">
                         <p>note</p>
                     </div>
-                    <a href="./jeu_view.php">Sable</a>
+                    <a href="http://localhost/Rotten_potatoes/Views/jeu_view.php?nom=Sable">Sable</a>
                 </div>
 
                 <div class="slide">

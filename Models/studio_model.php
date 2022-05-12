@@ -20,6 +20,10 @@
         public function getId_studio(){
             return $this->id_studio;
         }
+
+        public function setId_studio($id_studio){
+            $this->id_studio = $id_studio;
+        }
     
         public function getNom_studio(){
             return $this->nom_studio;
@@ -46,6 +50,7 @@
         //read
 
         //à corriger
+        /*
         public function getId_studioByName(){
             $myQuery = 'SELECT
                             id_studio
@@ -57,7 +62,7 @@
             $stmt = $this->connect->prepare($myQuery);
             $stmt->execute();
             return $stmt;
-        }
+        }*/
 
         //read all studios
         public function readStudio(){
@@ -82,6 +87,21 @@
 
             $stmt = $this->connect->prepare($myQuery);
             $stmt->bindParam(':nom_studio', $this->nom_studio);
+            $stmt->execute();
+            return $stmt;
+        }
+
+        //read one studio by id
+        public function readSingleStudioById(){
+            $myQuery = 'SELECT 
+                            * 
+                        FROM
+                            '.$this->table.'
+                        WHERE
+                            id_studio = :id_studio';
+
+            $stmt = $this->connect->prepare($myQuery);
+            $stmt->bindParam(':id_studio', $this->id_studio);
             $stmt->execute();
             return $stmt;
         }
