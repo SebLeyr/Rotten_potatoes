@@ -106,6 +106,44 @@
             return $stmt;
         }
 
+        //read all studio's games
+        public function readStudioGames(){
+            $myQuery = 'SELECT
+                            nom_jeu
+                        FROM
+                            jeux
+                        WHERE
+                            jeux.id_studio = (SELECT 
+                                                id_studio 
+                                            FROM 
+                                                '.$this->table.' 
+                                            WHERE 
+                                                nom_studio = :nom_studio)';
+            $stmt = $this->connect->prepare($myQuery);
+            $stmt->bindParam(':nom_studio', $this->nom_studio);
+            $stmt->execute();
+            return $stmt;
+        }
+
+                //read image by studio id
+                public function readImageByIdStudio() {
+                    $myQuery = 'SELECT
+                                    url_img
+                                FROM
+                                    images
+                                INNER JOIN
+                                    rattacher
+                                ON
+                                    rattacher.id_img = images.id_img
+                                WHERE
+                                    rattacher.id_studio = :id_studio';
+        
+                    $stmt = $this->connect->prepare($myQuery);
+                    $stmt->bindParam(':id_studio', $this->id_studio);
+                    $stmt->execute();
+                    return $stmt;
+                }
+
         //update
         public function updateStudio(){
             $myQuery = 'UPDATE

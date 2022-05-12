@@ -1,7 +1,5 @@
 <?php
     session_start();
-?>
-<?php
     include_once("../Controllers/jeu_controller.php");
 ?>
 <html lang="fr">
@@ -51,10 +49,10 @@
         </div>
         <div class="jeu">
             <div class="videoYT">
-                <iframe width="2544" height="1132" src="https://www.youtube.com/embed/a0evJUp7-aw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                <iframe width="2544" height="1132" src="<?= $trailer ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
             </div>
             <div id="blocJeu">
-                <img class="cover" src="./image/ex nouv sortie.jpg">
+                <img class="cover" src="<?= $jaquette ?>">
                 <div class="description">
                     <ul>
                         <li><?= $nom_jeu ?></li>
@@ -64,7 +62,7 @@
                                 <p>note</p>
                             </div>
                         </li>
-                        <li>Studio : <a href="http://localhost/Rotten_potatoes/Views/studio_view.php?nom=<?= $studio ?>"><?$studio?></a></li>
+                        <li>Studio : <a href="http://localhost/Rotten_potatoes/Views/studio_view.php?nom=<?= $studio ?>"><?= $studio ?></a></li>
                         <li>Éditeur : <?= $editeur ?></li>
                         <li>Date de sortie : <?= $date_sortie ?></li>
                         <li>Plateformes : <?= $plateforme ?></li>
@@ -83,13 +81,13 @@
             <div>
                 <h2 class="catégorie">Vidéos</h2>
                 <div class="carousel">
-                    <iframe width="2544" height="1132" src="https://www.youtube.com/embed/Fojy_YRseGk" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                    <iframe width="2544" height="1132" src="<?= $video ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
                 </div>
             </div>
             <div>
                 <h2 class="catégorie">Photos</h2>
                 <div class="carousel">
-                    <img src="./image/sable.jpg">
+                    <img src="<?= $image ?>">
                 </div>
             </div>
         </div>

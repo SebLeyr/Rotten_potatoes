@@ -169,6 +169,44 @@
             return $stmt;
         }
 
+        //read image by game id
+        public function readImageByIdJeu() {
+            $myQuery = 'SELECT
+                            url_img
+                        FROM
+                            images
+                        INNER JOIN
+                            appartenir
+                        ON
+                            appartenir.id_img = images.id_img
+                        WHERE
+                            appartenir.id_jeu = :id_jeu';
+
+            $stmt = $this->connect->prepare($myQuery);
+            $stmt->bindParam(':id_jeu', $this->id_jeu);
+            $stmt->execute();
+            return $stmt;
+        }
+
+        //read video by game id
+        public function readVideoByIdJeu() {
+            $myQuery = 'SELECT
+                            nom_video
+                        FROM
+                            videos
+                        INNER JOIN
+                            contenir
+                        ON
+                            contenir.id_video = videos.id_video
+                        WHERE
+                            contenir.id_jeu = :id_jeu';
+
+            $stmt = $this->connect->prepare($myQuery);
+            $stmt->bindParam(':id_jeu', $this->id_jeu);
+            $stmt->execute();
+            return $stmt;
+        }
+
         //update
         public function updateJeu(){
             $myQuery = 'UPDATE

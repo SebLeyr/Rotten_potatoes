@@ -1,5 +1,6 @@
 <?php
     session_start();
+    include_once("../Controllers/studio_controller.php");
 ?>
 <html lang="fr">
 <head>
@@ -49,9 +50,9 @@
         </div>
         <div class="studio">
             <div class="description">
-                <img src="./image/Shedworks.png">
+                <img src="<?= $image ?>">
                 <ul>
-                    <li>Shedworks</li>
+                    <li><?= $nom_studio ?></li>
                     <!--
                     <li>date création</li>
                     <li>nombre de personnes</li>
@@ -64,10 +65,7 @@
                     <h2>Jeux</h2>
                 </div>
                 <ul>
-                    <li>
-                        <a href="./Jeu.html">Sable</a>
-                        <img class="imgNote" src="./image/potatoe.png">
-                    </li>
+                    <?= $liste_jeux ?>
                 </ul>
             </div>
         </div>
