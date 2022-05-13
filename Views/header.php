@@ -16,7 +16,7 @@
                 <li><a href="./accueil_view.php">Actualités</a></li>
                 <li>Jeux</li>
                 <li><a href="./editeur_view.php">Editeurs</a></li>
-                <li><a href="./studio_view.php">Studios</a></li>
+                <li><a href="./listeStudios_view.php">Studios</a></li>
                 <li>Ma liste</li>
                 <li><a href="./creerJeu_view.php">Ajouter un jeu</a></li>
                 <li><a href="./admin_view.php">Administration</a></li>

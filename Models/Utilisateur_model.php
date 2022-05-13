@@ -23,6 +23,10 @@
         public function getId_user(){
             return $this->id_user;
         }
+
+        public function setIdUser($id_user) {
+            $this->id_user = $id_user;
+        }
     
         public function getPseudo_user(){
             return $this->pseudo_user;
@@ -113,20 +117,13 @@
                             password_user = :password_user,
                             id_droit = :id_droit
                         WHERE
-                            pseudo_user = :pseudo_user2,
-                            email_user = :email_user2,
-                            password_user = :password_user2,
-                            id_droit = :id_droit2';
+                            id_user = :id_user';
             
             $stmt = $this->connect->prepare($myQuery);
             $stmt->bindParam(':pseudo_user', $this->pseudo_user);
-            $stmt->bindParam(':pseudo_user2', $this->pseudo_user);
             $stmt->bindParam(':email_user', $this->email_user);
-            $stmt->bindParam(':email_user2', $this->email_user);
             $stmt->bindParam(':password_user', $this->password_user);
-            $stmt->bindParam(':password_user2', $this->password_user);
-            $stmt->bindParam(':nom_droit', $this->nom_droit);
-            $stmt->bindParam(':nom_droit2', $this->nom_droit);
+            $stmt->bindParam(':id_droit', $this->id_droit);
             if($stmt->execute()) {
                 return true;
             } else {

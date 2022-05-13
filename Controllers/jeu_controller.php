@@ -22,7 +22,7 @@
 
     $resume = $donnees['resume_jeu'];
 
-    //$req2 = $newStudio->setId_studio($donnees['id_studio']);
+    $req2 = $newStudio->setId_studio($donnees['id_studio']);
     $req2 = $newStudio->readSingleStudioById();
     $donnees2 = $req2->fetch();
     $studio = $donnees2['nom_studio'];

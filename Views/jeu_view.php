@@ -58,8 +58,31 @@
                         <li><?= $nom_jeu ?></li>
                         <li>
                             <div class="note">
-                                <img class="imgNote" src="./image/potatoe.png">
+                                <img class="imgNote" src="../images/potatoe.png">
                                 <p>note</p>
+                                <a id="noter">Noter</a>
+                                <!-- <div id="modalNote">
+                                    <p>Ma note :</p>
+                                    <div>
+                                        <form id="formNoter" method="POST" action="">
+                                            <input type="range" list="tickmarks">
+                                            <datalist id="tickmarks">
+                                                <option value="0" label="0"></option>
+                                                <option value="1" label="1"></option>
+                                                <option value="2" label="2"></option>
+                                                <option value="3" label="3"></option>
+                                                <option value="4" label="4"></option>
+                                                <option value="5" label="5"></option>
+                                                <option value="6" label="6"></option>
+                                                <option value="7" label="7"></option>
+                                                <option value="8" label="8"></option>
+                                                <option value="9" label="9"></option>
+                                                <option value="10" label="10"></option>
+                                            </datalist>
+                                            <input type="submit" name="postNote" value="Publier votre note">
+                                        </form>
+                                    </div>
+                                </div> -->
                             </div>
                         </li>
                         <li>Studio : <a href="http://localhost/Rotten_potatoes/Views/studio_view.php?nom=<?= $studio ?>"><?= $studio ?></a></li>
@@ -90,12 +113,17 @@
                     <img src="<?= $image ?>">
                 </div>
             </div>
+            <div>
+                <h2 class="catégorie">Commentaires</h2>
+                
+            </div>
         </div>
     </div>
     <?php
         include('../Views/footer.php');
     ?>
-    <script src="../Views/Scripts/CreerCompte.js"></script>
+    <script src="./Scripts/CreerCompte.js"></script>
+    <script src="./Scripts/noter.js"></script>
     <!--<script src="carousel.js"></script>-->
 </body>
 </html>
