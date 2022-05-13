@@ -50,8 +50,8 @@
         </div>
         <div class="jeu">
             <div class="videoYT">
-                <!--<iframe width="2544" height="1132" src="<?= $trailer ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
---></div>
+                <iframe width="2544" height="1132" src="<?= $trailer ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+            </div>
             <div id="blocJeu">
                 <img class="cover" src="<?= $jaquette ?>">
                 <div class="description">
@@ -83,8 +83,8 @@
             <div>
                 <h2 class="catégorie">Vidéos</h2>
                 <div class="carousel">
-                    <!--<iframe width="2544" height="1132" src="<?= $video ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
---></div>
+                    <iframe width="2544" height="1132" src="<?= $video ?>" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+                </div>
             </div>
             <div>
                 <h2 class="catégorie">Photos</h2>
