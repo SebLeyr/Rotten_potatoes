@@ -124,6 +124,7 @@
             $stmt->bindParam(':email_user', $this->email_user);
             $stmt->bindParam(':password_user', $this->password_user);
             $stmt->bindParam(':id_droit', $this->id_droit);
+            $stmt->bindParam(':id_user', $this->id_user);
             if($stmt->execute()) {
                 return true;
             } else {

@@ -17,6 +17,7 @@
         $user->setIdUser($_SESSION['id']);
         $user->setPseudo_user($donnees['pseudo_user']);
         $user->setEmail_user($donnees['email_user']);
+        $user->setPassword_user($donnees['password_user']);
         $user->setId_droit($donnees['id_droit']);
 
         //affichage des infos du compte
@@ -52,12 +53,10 @@
 
                 if($nbrLignes > 0) {
                     $log = "Pseudo déjà utilisé";
-                } else {
-                    if($user->updateUser()) {
+                } else if($user->updateUser()) {
                         $_SESSION['pseudo'] = $user->getPseudo_user();
                         header("location: http://localhost/Rotten_potatoes/Views/monCompte_view.php");
                     }
-                }
             } else {
                 $log = "Veuillez entrer un pseudo";
             }
@@ -74,21 +73,49 @@
 
                 if($nbrLignes > 0) {
                     $log = "Email déjà utilisé";
-                } else {
-                    if($user->updateUser()) {
+                } else if($user->updateUser()) {
                         header("location: http://localhost/Rotten_potatoes/Views/monCompte_view.php");
                     }
-                }
             } else {
                 $log = "Veuillez entrer un Mail";
             }
         }
 
         //changement mdp
-        
+        if (isset($_POST['Mdp']) && isset($_POST['newMdp']) && isset($_POST['newMdpConf'])) {
+
+            $verifPassword = $verif->valid_donnees($_POST['Mdp']);
+            $verifNewPassword = $verif->valid_donnees($_POST['newMdp']);
+            $verifNewPasswordConf = $verif->valid_donnees($_POST['newMdpConf']);
+
+            // je compare mot de passe reçu avec celui de la BDD
+            // si il ne sont pas identiques je retourne un message d'erreur
+            if(!password_verify($verifPassword, $donnees['password_user'])) {
+                $log = "Erreur dans votre mot de passe, veuillez recommencer";
+            } else if($verifNewPassword !== $verifNewPasswordConf) {
+                    $log = "la confirmation ne correspond pas au nouveau mot de passe";
+                } else if ($verifNewPassword != ""){
+                        $user->setPassword_user(password_hash($verifNewPassword, PASSWORD_BCRYPT));
+                        $user->updateUser();
+                        header("location: http://localhost/Rotten_potatoes/Views/monCompte_view.php");
+                    } else {
+                        $log = "Veuillez entrer un nouveau mot de passe";
+                    }
+        }
 
         //suppression compte
+        if(isset($_POST['passwordSuppr'])) {
 
+            $verifPassword = $verif->valid_donnees($_POST['passwordSuppr']);
+            if(!password_verify($verifPassword, $donnees['password_user'])) {
+                $log = "Erreur dans votre mot de passe, veuillez recommencer";
+            } else {
+                $user->deleteUser();
+                session_unset();
+                session_destroy();
+                header("location: http://localhost/Rotten_potatoes/Views/accueil_view.php");
+            }
+        }
     }else { 
         $compte = "Please log in";
     }

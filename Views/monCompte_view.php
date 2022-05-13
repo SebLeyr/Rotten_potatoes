@@ -19,6 +19,9 @@
     <?php
         include('../Views/header.php');
     ?>
+    <!--display des message d'erreurs-->
+    <?= $log ?>
+    <!--informations du compte connecté-->
     <div>
         <?= $compte ?>
     </div>
