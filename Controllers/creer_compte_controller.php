@@ -27,23 +27,27 @@
         // ensuite je vérifie que password et confPassword sont identiques
         if($passwordUser !== $confPassword) {
             // je passe une valeur à la variable $msg pour traiter cette erreur
-            $log = 'Les mots de passe doivent correspondre';
+            //$log = 'Les mots de passe doivent correspondre';
+            echo "<script>alert('Les mots de passe doivent correspondre')</script>";
         } else {
             // je vérifie si la valeur de $mail est bien un mail grâce à la fonction filter_var
             // qui prend la donnée en paramètre ainsi que FILTER_VALIDATE_EMAIL pour demander la vérification
             if(!filter_var($mailUser, FILTER_VALIDATE_EMAIL)){
                 // je passe une valeur à la variable $msg pour traiter cette erreur
-                $log = "L'E-mail est incorrect";
+                //$log = "L'E-mail est incorrect";
+                echo "<script>alert('L'E-mail est incorrect')</script>";
             }
             // et je renouvelle cette opération pour la valeur de la variable $confMail
             else if(!filter_var($confMail, FILTER_VALIDATE_EMAIL)){
                 // je passe une valeur à la variable $msg pour traiter cette erreur
-                $log = "L'E-mail de confirmation est incorrect";
+                //$log = "L'E-mail de confirmation est incorrect";
+                echo "<script>alert('L'E-mail de confirmation est incorrect')</script>";
             }
             // je vérifie maintenant que les mails sont  identiques
             else if($mailUser !== $confMail){
                 // je passe une valeur à la variable $msg pour traiter cette erreur
-                $log = "les E-mails doivent correspondres";
+                //$log = "les E-mails doivent correspondres";
+                echo "<script>alert('les E-mails doivent correspondres')</script>";
             } else {
                 // Ici je vais vérifier les champs suivants : $pseudo, email et $mdp.
                 // Afin de sécuriser nos données nous allons effectuer des traitements à nos variables
@@ -78,23 +82,27 @@
                 $nbrLignes = $checkMail->rowCount();
 
                 if($nbrLignes > 0) {
-                    $log = "E-mail déjà utilisé";
+                    //$log = "E-mail déjà utilisé";
+                    echo "<script>alert('E-mail déjà utilisé')</script>";
                 } else {
                     $checkPseudo = $newUser->verifyPseudo();
                     $nbrLignes = $checkPseudo->rowCount();
 
                     if($nbrLignes > 0) {
-                        $log = "Pseudo déjà utilisé";
+                        //$log = "Pseudo déjà utilisé";
+                        echo "<script>alert('Pseudo déjà utilisé')</script>";
                     } else {
                         if($newUser->createUser()){
                             $myReturn = $newUser->getSingleUser();
                             $nbrUsers = $myReturn->rowCount();
 
                             if($nbrUsers == 0){
-                                $log = "Something went wrong, please contact an administrator";
+                                //$log = "Something went wrong, please contact an administrator";
+                                echo "<script>alert('Something went wrong, please contact an administrator')</script>";
 
                             } else if($nbrUsers >1){
-                                $log ="Mail déjà utilisé";
+                                //$log ="Mail déjà utilisé";
+                                echo "<script>alert('Mail déjà utilisé')</script>";
 
                             } else if ($nbrUsers == 1) {
                                 echo '<script>alert("Compte créé avec succès")</script>';
@@ -110,7 +118,8 @@
                                 // }
                             }
                         } else {
-                            $log = "Error during the register";
+                            //$log = "Error during the register";
+                            echo "<script>alert('Error during the register')</script>";
                         }
                     }
                 }

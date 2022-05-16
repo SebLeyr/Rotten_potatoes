@@ -19,7 +19,6 @@ let closeMail = document.getElementById("closeMail");
 let closePassword = document.getElementById("closePassword");
 let closeDelete = document.getElementById("closeDelete");
 
-
 //modalName
 //ouverture de la page avec le bouton
 btnModifyName.addEventListener("click", function() {

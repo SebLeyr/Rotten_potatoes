@@ -26,11 +26,11 @@
 
         $compte = '
                 <div>
-                    <p>Pseudo : '.$pseudo.'</p>
+                    <p id="test"><b>Pseudo :</b> '.$pseudo.'</p>
                     <a class="btnModal" id="btnModifyPseudo">Modifier</a>
                 </div>
                 <div>
-                    <p>Email : '.$email.'</p>
+                    <p><b>Email :</b> '.$email.'</p>
                     <a class="btnModal" id="btnModifyMail">Modifier</a>
                 </div>
                 <br>
@@ -52,13 +52,15 @@
                 $nbrLignes = $checkPseudo->rowCount();
 
                 if($nbrLignes > 0) {
-                    $log = "Pseudo déjà utilisé";
+                    //$log = "Pseudo déjà utilisé";
+                    echo "<script>alert('Pseudo déjà utilisé')</script>";
                 } else if($user->updateUser()) {
                         $_SESSION['pseudo'] = $user->getPseudo_user();
                         header("location: http://localhost/Rotten_potatoes/Views/monCompte_view.php");
                     }
             } else {
-                $log = "Veuillez entrer un pseudo";
+                //$log = "Veuillez entrer un pseudo";
+                echo "<script>alert('Veuillez entrer un pseudo')</script>";
             }
         }
 
@@ -72,12 +74,14 @@
                 $nbrLignes = $checkMail->rowCount();
 
                 if($nbrLignes > 0) {
-                    $log = "Email déjà utilisé";
+                    //$log = "Email déjà utilisé";
+                    echo "<script>alert('Email déjà utilisé')</script>";
                 } else if($user->updateUser()) {
                         header("location: http://localhost/Rotten_potatoes/Views/monCompte_view.php");
                     }
             } else {
-                $log = "Veuillez entrer un Mail";
+                //$log = "Veuillez entrer un Mail";
+                echo "<script>alert('Veuillez entrer un Mail')</script>";
             }
         }
 
@@ -91,15 +95,18 @@
             // je compare mot de passe reçu avec celui de la BDD
             // si il ne sont pas identiques je retourne un message d'erreur
             if(!password_verify($verifPassword, $donnees['password_user'])) {
-                $log = "Erreur dans votre mot de passe, veuillez recommencer";
+                //$log = "Erreur dans votre mot de passe, veuillez recommencer";
+                echo "<script>alert('Erreur dans votre mot de passe, veuillez recommencer')</script>";
             } else if($verifNewPassword !== $verifNewPasswordConf) {
-                    $log = "la confirmation ne correspond pas au nouveau mot de passe";
+                    //$log = "la confirmation ne correspond pas au nouveau mot de passe";
+                    echo "<script>alert('la confirmation ne correspond pas au nouveau mot de passe')</script>";
                 } else if ($verifNewPassword != ""){
                         $user->setPassword_user(password_hash($verifNewPassword, PASSWORD_BCRYPT));
                         $user->updateUser();
                         header("location: http://localhost/Rotten_potatoes/Views/monCompte_view.php");
                     } else {
-                        $log = "Veuillez entrer un nouveau mot de passe";
+                        //$log = "Veuillez entrer un nouveau mot de passe";
+                        echo "<script>alert('Veuillez entrer un nouveau mot de passe')</script>";
                     }
         }
 
@@ -108,7 +115,8 @@
 
             $verifPassword = $verif->valid_donnees($_POST['passwordSuppr']);
             if(!password_verify($verifPassword, $donnees['password_user'])) {
-                $log = "Erreur dans votre mot de passe, veuillez recommencer";
+                //$log = "Erreur dans votre mot de passe, veuillez recommencer";
+                echo "<script>alert('Erreur dans votre mot de passe, veuillez recommencer')</script>";
             } else {
                 $user->deleteUser();
                 session_unset();

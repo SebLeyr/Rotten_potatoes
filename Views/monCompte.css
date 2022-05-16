@@ -1,9 +1,47 @@
 /*-------------------page mon compte------------------*/
-
-/*----------------modales modifications---------------*/
-a {
-    color: rgb(22, 80, 189);
+#infos div {
+    display: flex;
+    height: 40px;
 }
+
+h2 {
+    font-family: Neusa,Impact,Helvetica Neue,Arial,Sans-Serif;
+    font-weight: 500;
+    font-size: 1.25rem;
+    padding-left: 9px;
+    text-transform: uppercase;
+    margin-bottom: 1em;
+    margin-left: 15px;
+}
+
+h2:before {
+    position: absolute;
+    content: "";
+    height: 1.2em;
+    border-left: 5px solid rgb(146, 105, 17);
+    margin: -1px 0 0 -9px;
+}
+
+#infos a {
+    margin: 10px 15px 0 15px;
+    padding: 5px;
+    box-sizing: border-box;
+    border: 1px solid #e9e9ea;
+    border-radius: 5px;
+    box-shadow: 0 1px 1px rgb(0 0 0 / 8%);
+    font-family: "Libre Franklin";
+    font-weight: bold;
+}
+
+#infos p{
+    font-family: "Libre Franklin";
+    padding-left: 15px;
+}
+
+#infos {
+    height: 78%;
+}
+/*----------------modales modifications---------------*/
 
 .btnModal {
     cursor: pointer;
@@ -34,8 +72,7 @@ a {
 }
 
 .modaleModif {
-    width: 40vh;
-    height: 30vh;
+    width: 45vh;
     border-radius: 6px;
     background-color: white;
     overflow-y: auto;
@@ -45,7 +82,6 @@ a {
 .modaleModif header {
     padding-top: 10px;
     text-align: center;
-    height: 10%;
 }
 
 .modaleModif div {
@@ -54,6 +90,29 @@ a {
     display: flex;
     justify-content: space-around;
     align-items: center;
+}
+
+.modaleModif h3, .modaleModif label {
+    font-family: "Libre Franklin";
+}
+
+.modaleModif ul {
+    list-style: none;
+}
+
+.modaleModif li {
+    margin: 5px 0 10px 0;
+}
+
+.modaleModif input {
+    font-size: 1.2em;
+    padding: 1px 2px 1px 2px;
+    font-family: "Libre Franklin";
+}
+
+.modaleModif form h3{
+    color: rgb(128, 7, 7);
+    text-align: center;
 }
 /*----------------------------ANIMATION-----------------------------*/
 @keyframes slideTop {

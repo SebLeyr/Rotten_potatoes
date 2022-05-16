@@ -19,10 +19,11 @@
     <?php
         include('../Views/header.php');
     ?>
+    <h2>Mon compte</h2>
     <!--display des message d'erreurs-->
     <?= $log ?>
     <!--informations du compte connecté-->
-    <div>
+    <div id="infos">
         <?= $compte ?>
     </div>
     <!--Modale modif pseudo-->
@@ -32,7 +33,7 @@
                 <span class="close" id="closePseudo">&times;</span>
                 <h3>Entrez un nouveau pseudo :</h3>
             </header>
-            <form id="modifyPseudo" method="POST" action="">
+            <form id="modifyPseudo" method="POST" action="#">
                 <ul>
                     <li>
                         <label for="newPseudo">Pseudo :</label>
@@ -97,10 +98,8 @@
                 <h3>Supprimez votre compte :</h3>
             </header>
             <form id="DeleteAccount" method="POST" action="">
+            <h3>Cette action est permanante, êtes-vous sûrs ?</h3> 
                 <ul>
-                    <li>
-                        <h3>Cette action est permanante, êtes-vous sûrs ?</h3> 
-                    </li>
                     <li>
                         <label for="passwordSuppr">Votre mot de passe</label>
                         <input type="password" name="passwordSuppr" required> 

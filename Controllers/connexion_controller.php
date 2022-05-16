@@ -33,7 +33,8 @@
             // je compare mot de passe reçu avec celui de la BDD
             // si il ne sont pas identiques je retourne un message d'erreur
             if(!password_verify($password, $verif['password_user'])) {
-                $log = "Erreur dans votre mot de passe, veuillez recommencer";
+                //$log = "Erreur dans votre mot de passe, veuillez recommencer";
+                echo "<script>alert('Erreur dans votre mot de passe, veuillez recommencer')</script>";
                 // s'ils sont identiques je continue le log
             } else if (password_verify($user->getPassword_user(), $verif['password_user'])) {
                 $_SESSION['id'] = $verif['id_user'];
@@ -42,10 +43,12 @@
 
                 header("location: ../Views/accueil_view.php");
             } else {
-                $log = "Error in second password verify";
+                //$log = "Error in second password verify";
+                echo "<script>alert('Error in second password verify')</script>";
             }
         } else {
-            $log = "L'utilsiateur n'existe pas";
+            //$log = "L'utilisateur n'existe pas";
+            echo "<script>alert('L'utilisateur n'existe pas')</script>";
         }
     }
 

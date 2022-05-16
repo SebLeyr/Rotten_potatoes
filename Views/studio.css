@@ -1,8 +1,8 @@
 /*------------------------------BODY--------------------------------*/
-
 #container {
     display: flex;
     flex: 1; /*permet d'étendre le contenu du container et mettre le footer en bas de page*/
+    height: 83%;
 }
 
 .studio {

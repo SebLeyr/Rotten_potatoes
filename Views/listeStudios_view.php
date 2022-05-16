@@ -18,16 +18,14 @@
     <?php
         include('../Views/header.php');
     ?>
-    <div id="Container">
     <div class="studios">
-                <div class="studio">
-                    <h2>Studios</h2>
-                </div>
-                <ul>
-                    <?= $liste_studios ?>
-                </ul>
-            </div>
-    </div>
+        <div class="studio">
+            <h2>Studios</h2>
+        </div>
+        <ul>
+            <?= $liste_studios ?>
+        </ul>
+</div>
     <?php
         include('../Views/footer.php');
     ?>
