@@ -7,6 +7,7 @@
     <meta charset="UTF-8">
     <title>Rotten potatoes : reviews de jeux vidéos par la communauté pour la communauté</title>
     <link rel="stylesheet" href="./template.css">
+    <link rel="stylesheet" href="./listeStudios.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Libre+Franklin&display=swap" rel="stylesheet">

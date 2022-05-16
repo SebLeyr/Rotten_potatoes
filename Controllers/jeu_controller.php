@@ -65,7 +65,7 @@
                         <p>Ma note :</p>
                         <div class="notes">
                             <span class="fa fa-star fa-2x" data-value=1></span><span class="fa fa-star fa-2x" data-value=2></span><span class="fa fa-star fa-2x" data-value=3></span><span class="fa fa-star fa-2x" data-value=4></span><span class="fa fa-star fa-2x" data-value=5></span><span class="fa fa-star fa-2x" data-value=6></span><span class="fa fa-star fa-2x" data-value=7></span><span class="fa fa-star fa-2x" data-value=8></span><span class="fa fa-star fa-2x" data-value=9></span><span class="fa fa-star fa-2x" data-value=10></span>
-                            <input type="hiden" name="postNote" id="note" value="0">
+                            <input type="hidden" name="postNote" id="note" value="0">
                         </div>
                     </div>';
     } else {
