@@ -41,7 +41,7 @@ h2.catégorie {
 }
 
 h2.catégorie:before {
-    /*position: absolute;*/
+    position: absolute;
     content: "";
     height: 0.8em;
     min-width: 25px;
@@ -51,7 +51,7 @@ h2.catégorie:before {
 }
 
 h2.catégorie:after {
-    /*position: absolute;*/
+    position: absolute;
     content: "";
     height: 0.8em;
     width: inherit;
