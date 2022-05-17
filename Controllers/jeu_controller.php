@@ -9,7 +9,7 @@
     include('../Utilitaires/utilitaires.php');
     $verif = new Outils();
 
-    //affichage des données du jeu présentes en BDD
+    //affichage des données du jeu présentes en BDD en récupérant le nom présent dans l'url
     $url = $_GET['nom'];
     $req = $newjeu->setNom_jeu($url);
     $req = $newjeu->readSingleJeu();
@@ -22,6 +22,8 @@
     $nbr_joueurs = $donnees['nombre_de_joueurs'];
 
     $resume = $donnees['resume_jeu'];
+
+    //utilisation des fonctions read des différents modèles concernés pour récupérer les données requises en BDD
 
     $req2 = $newStudio->setId_studio($donnees['id_studio']);
     $req2 = $newStudio->readSingleStudioById();

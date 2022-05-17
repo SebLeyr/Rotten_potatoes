@@ -7,11 +7,16 @@
     $droit = new Droit();
     $verif = new Outils();
 
+    // création de la variable de display info, laissé vide au start pour éviter des erreurs
     $log = "";
 
-    //vérification des champs
-    if(isset($_POST['pseudoLog']) && !empty($_POST['pseudoLog']) && isset($_POST['mdpLog']) && !empty($_POST['mdpLog'])) {
+    //vérification de la présence et de la validité des champs
+    if(isset($_POST['pseudoLog']) 
+        && !empty($_POST['pseudoLog']) 
+        && isset($_POST['mdpLog']) 
+        && !empty($_POST['mdpLog'])) {
 
+        //protection contre les failles XSS (voir utilitaires.php)
         $pseudo = $verif->valid_donnees($_POST['pseudoLog']);
         $password = $verif->valid_donnees($_POST['mdpLog']);
 
@@ -37,10 +42,12 @@
                 echo "<script>alert('Erreur dans votre mot de passe, veuillez recommencer')</script>";
                 // s'ils sont identiques je continue le log
             } else if (password_verify($user->getPassword_user(), $verif['password_user'])) {
+                //Je renseignes les champs pertinents dans la variable $_SESSION de PHP pour qu'ils soit disponibles sur toutes les pages
                 $_SESSION['id'] = $verif['id_user'];
                 $_SESSION['pseudo'] = $verif['pseudo_user'];
                 $_SESSION['id_droit'] = $idDroit['id_droit'];
 
+                //redirection vers l'accueil une fois connecté
                 header("location: ../Views/accueil_view.php");
             } else {
                 //$log = "Error in second password verify";
@@ -56,11 +63,9 @@
     //---------Affichage quand utilisateur connecté---------//
     //------------------------------------------------------//
 
-    //affichage deconnexion et accès espace compte et affichage des données de session quand connecté
+    //Gestion de l'affiche du menu de connexion et d'accès à l'espace mon compte quand connecté ou déconnecté
     if(isset($_SESSION['id'])){
-
         $pseudo = $_SESSION['pseudo'];
-        //modification affichage boutons créer compte et connexion
         $account = '<a href="./monCompte_view.php">'.$pseudo.'</a>';
         $connexion = '<form action="" method="POST"> <input type="submit" id="deconnexion" name="deconnexion" value="Déconnexion"></form>';
     } else {

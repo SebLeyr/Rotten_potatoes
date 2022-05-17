@@ -92,7 +92,7 @@
             return $stmt;
         }
 
-        //read user by pseudo
+        //read single user by pseudo
         public function getSingleUser(){
             $myQuery = 'SELECT 
                             * 

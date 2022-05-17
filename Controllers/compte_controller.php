@@ -7,9 +7,11 @@
     $droit = new Droit();
     $verif = new Outils();
 
+    // création de la variable de display info, laissé vide au start pour éviter des erreurs
     $log = "";
 
     if(isset($_SESSION['id'])){
+        //récupération des données de l'utilisateur connecté via une fonction du modèle utilisateur et du pseudo stocké dans la session
         $user->setPseudo_user($_SESSION['pseudo']);
         $req = $user->getSingleUser();
         $donnees = $req->fetch();
@@ -24,6 +26,7 @@
         $pseudo = $user->getPseudo_user();
         $email = $user->getEmail_user();
 
+        //Variable contenant l'affichage des informations du comtpe en HTML pour avoir un affichage uniquement quand l'utilsiateur est connecté
         $compte = '
                 <div>
                     <p id="test"><b>Pseudo :</b> '.$pseudo.'</p>
@@ -46,6 +49,7 @@
         if(isset($_POST['newPseudo'])) {
             $verifNewPseudo = $verif->valid_donnees($_POST['newPseudo']);
             if($verifNewPseudo != ""){
+                //si le champ n'est pas vide, vérification que le pseudo n'est pas déjà présent dans la BDD
                 $user->setPseudo_user($verifNewPseudo);
                 
                 $checkPseudo = $user->verifyPseudo();
@@ -55,6 +59,7 @@
                     //$log = "Pseudo déjà utilisé";
                     echo "<script>alert('Pseudo déjà utilisé')</script>";
                 } else if($user->updateUser()) {
+                        //si la modification réussie, modification du pseudo stocké dans la variable $_SESSION puis redirection vers la page mon compte
                         $_SESSION['pseudo'] = $user->getPseudo_user();
                         header("location: http://localhost/Rotten_potatoes/Views/monCompte_view.php");
                     }
@@ -118,6 +123,8 @@
                 //$log = "Erreur dans votre mot de passe, veuillez recommencer";
                 echo "<script>alert('Erreur dans votre mot de passe, veuillez recommencer')</script>";
             } else {
+                //si le mot de passe est correct, utlisation de la fonction de utilisateur pour supprimer le compte
+                //dans la BDD et suppression de la session avant de rediriger vers l'acceuil
                 $user->deleteUser();
                 session_unset();
                 session_destroy();

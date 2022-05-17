@@ -1,9 +1,8 @@
 <?php
     session_start();
-?>
-<?php
     include('../Controllers/creerEditeur_controller.php');
 ?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>

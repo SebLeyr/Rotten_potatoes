@@ -55,10 +55,6 @@
                             <label for="confirmMdp">Confirmer le mot de passe </label>
                             <input type="password" name="confirmMdp" minlength="8" maxlength="25" id="confirmMdp"/>
                         </li>
-                        <!-- <li>
-                            <input type="checkbox" id="CondUtilisat">
-                            <label for="CondUtilisat">Je souhaite m'inscrire à la newletter du site </label>
-                        </li> -->
                         <p><strong><?php echo $log; ?></strong></p>
                         <li>
                             <input type="submit" name="Crea" value="Créer votre compte">

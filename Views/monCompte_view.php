@@ -114,6 +114,5 @@
     ?>
     <script src="./Scripts/CreerCompte.js"></script>
     <script src="./Scripts/monCompte.js"></script>
-    <!--<script src="carousel.js"></script>-->
 </body>
 </html>

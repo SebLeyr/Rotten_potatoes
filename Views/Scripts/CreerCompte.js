@@ -1,4 +1,4 @@
-//récupérer la page de création de compte
+//récupérer du background de la modale de création de compte
 var crea = document.querySelector("#creaCompte");
 var back = crea.style.background;
 

@@ -8,7 +8,7 @@
 
         // l'attribut suivant sera lui en public
         // pour permettre aux autres classes d'accéder à la connexion 
-        // de la fonction de connection à la base de données
+        // de la fonction de connexion à la base de données
         public $connect;
         
         // je crée la fonction pour appeler le système de connexion à ma BDD

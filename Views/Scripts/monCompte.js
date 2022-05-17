@@ -1,48 +1,48 @@
 //background modales
-let modalBName = document.getElementById("modalBPseudo");
+let modalBPseudo = document.getElementById("modalBPseudo");
 let modalBMail = document.getElementById("modalBMail");
 let modalBPassword = document.getElementById("modalBPassword");
 let modalBDelete = document.getElementById("modalBDelete");
 //modales
-let modalName = document.getElementById("modalPseudo");
+let modalPseudo = document.getElementById("modalPseudo");
 let modalMail = document.getElementById("modalMail");
 let modalPassword = document.getElementById("modalPassword");
 let modalDelete = document.getElementById("modalDelete");
 //boutons ouverture modales
-let btnModifyName = document.getElementById("btnModifyPseudo");
+let btnModifyPseudo = document.getElementById("btnModifyPseudo");
 let btnModifyMail = document.getElementById("btnModifyMail");
 let btnModifyPassword = document.getElementById("btnModifyPassword");
 let btnDelete = document.getElementById("btnDelete");
 //bouton fermeture
-let closeName = document.getElementById("closePseudo");
+let closePseudo = document.getElementById("closePseudo");
 let closeMail = document.getElementById("closeMail");
 let closePassword = document.getElementById("closePassword");
 let closeDelete = document.getElementById("closeDelete");
 
-//modalName
+//modalPseudo
 //ouverture de la page avec le bouton
-btnModifyName.addEventListener("click", function() {
-    modalBName.style.display = "flex";
-    modalBName.style.animation = "fadeIn 0.5s";
-    modalName.style.animation = "slideTop 0.5s";
+btnModifyPseudo.addEventListener("click", function() {
+    modalBPseudo.style.display = "flex";
+    modalBPseudo.style.animation = "fadeIn 0.5s";
+    modalPseudo.style.animation = "slideTop 0.5s";
 })
 
 //fermeture de la page avec le bouton
-closeName.addEventListener("click", function() {
-    modalBName.style.animation = "fadeOut 0.5s";
-    modalName.style.animation = "slideOut 0.5s";
+closePseudo.addEventListener("click", function() {
+    modalBPseudo.style.animation = "fadeOut 0.5s";
+    modalPseudo.style.animation = "slideOut 0.5s";
     setTimeout(function() {
-        modalBName.style.display = "none";
+        modalBPseudo.style.display = "none";
     }, 400);
 })
 
 //fermeture de la page avec le background
 window.addEventListener("click", function(event) {
-    if (event.target == modalBName) {
-        modalBName.style.animation = "fadeOut 0.5s";
-        modalName.style.animation = "slideOut 0.5s";
+    if (event.target == modalBPseudo) {
+        modalBPseudo.style.animation = "fadeOut 0.5s";
+        modalPseudo.style.animation = "slideOut 0.5s";
         setTimeout(function() {
-            modalBName.style.display = "none";
+            modalBPseudo.style.display = "none";
         }, 400);
     }
 })

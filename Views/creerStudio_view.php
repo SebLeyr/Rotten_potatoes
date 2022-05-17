@@ -1,7 +1,5 @@
 <?php
     session_start();
-?>
-<?php
     include('../Controllers/creerStudio_controller.php');
 ?>
 <!DOCTYPE html>

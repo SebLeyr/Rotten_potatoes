@@ -49,21 +49,6 @@
 
         //read
 
-        //à corriger
-        /*
-        public function getId_studioByName(){
-            $myQuery = 'SELECT
-                            id_studio
-                        FROM
-                            '.$this->table.'
-                        WHERE
-                            nom_studio = '.$this->nom_studio.'';
-            
-            $stmt = $this->connect->prepare($myQuery);
-            $stmt->execute();
-            return $stmt;
-        }*/
-
         //read all studios
         public function readStudio(){
             $myQuery = 'SELECT 
