@@ -57,7 +57,7 @@
                 $newUser->setEmail_user($verifMailUser);
                 $newUser->setId_droit(0);
                 // pour l'affectation du mot de passe je vais également utiliser la fonction de hash de BCRIPT
-                // pour crypter le mot de passe.
+                // pour hacher le mot de passe.
                 $newUser->setPassword_user(password_hash($verifPasswordUser, PASSWORD_BCRYPT));
                 
                 // avant de pourvoir procéder à l'insertion en base de données
