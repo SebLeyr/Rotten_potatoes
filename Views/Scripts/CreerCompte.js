@@ -81,3 +81,18 @@ window.addEventListener("click", function(event) {
         }, 400);
     }
 })
+
+//récupérer le bouton d'ouverture de la page
+var openCoFromCrea = document.getElementById("connexionCrea");
+
+//ouverture de la modale de connexion depuis la modale de création de compte
+openCoFromCrea.addEventListener("click", function() {
+    crea.style.animation = "fadeOut 0.5s";
+    modal.style.animation = "slideOut 0.5s";
+    setTimeout(function() {
+        crea.style.display = "none";
+    }, 400);
+    connec.style.display = "flex";
+    connec.style.animation = "fadeIn 0.5s";
+    modalCo.style.animation = "slideTop 0.5s";
+})

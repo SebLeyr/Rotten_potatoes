@@ -63,7 +63,7 @@
                 </form>
             </div>
             <footer>
-                <p>Déjà un compte ?  Identifiez vous ici</p>
+                <p>Déjà un compte ?  Identifiez vous <a id="connexionCrea">ici</a></p>
             </footer>
         </div>
     </div>

@@ -53,12 +53,12 @@
                 $newUser = new User();
 
                 // et j'utilise les setters de la classe User pour affecter les valeurs des variables aux attributs de la classe
-                $newUser->setPseudo_user($verifPseudoUser);
-                $newUser->setEmail_user($verifMailUser);
+                $newUser->setPseudo_user($pseudoUser);
+                $newUser->setEmail_user($mailUser);
                 $newUser->setId_droit(0);
                 // pour l'affectation du mot de passe je vais également utiliser la fonction de hash de BCRIPT
                 // pour hacher le mot de passe.
-                $newUser->setPassword_user(password_hash($verifPasswordUser, PASSWORD_BCRYPT));
+                $newUser->setPassword_user(password_hash($passwordUser, PASSWORD_BCRYPT));
                 
                 // avant de pourvoir procéder à l'insertion en base de données
                 // je vais vérifier que le pseudo et le mail n'existent pas déjà dans ma base de données

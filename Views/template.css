@@ -167,6 +167,10 @@ footer li {
     cursor: pointer;
 }
 
+#connexionCrea {
+    cursor: pointer;
+}
+
 .modal-container #close {
     color: #aaa;
     float: right;
