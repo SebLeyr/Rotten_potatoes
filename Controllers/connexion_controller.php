@@ -25,7 +25,6 @@
             $user->setPassword_user($password);
 
             $req = $user->getSingleUser();
-            $reqTable = $user->getTable();
 
         } catch (Exception $e) {
             die('Erreur : ' . $e->getMessage());

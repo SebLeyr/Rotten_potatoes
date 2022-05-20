@@ -2,10 +2,6 @@
     include('../Utilitaires/connec_bdd.php');
     include('../Models/jeu_model.php');
     $newjeu = new Jeu();
-    include('../Models/editeur_model.php');
-    $newEditeur = new Editeur();
-    include('../Models/studio_model.php');
-    $newStudio = new Studio();
     include('../Utilitaires/utilitaires.php');
     $verif = new Outils();
 
@@ -25,38 +21,35 @@
 
     //utilisation des fonctions read des différents modèles concernés pour récupérer les données requises en BDD
 
-    $req2 = $newStudio->setId_studio($donnees['id_studio']);
-    $req2 = $newStudio->readSingleStudioById();
+    $req2 = $newjeu->readStudioByGame();
     $donnees2 = $req2->fetch();
     $studio = $donnees2['nom_studio'];
 
-    $req2 = $newEditeur->setId_editeur($donnees['id_editeur']);
-    $req2 = $newEditeur->readSingleEditeurById();
+    $req2 = $newjeu->readEditeurByGame();
     $donnees2 = $req2->fetch();
     $editeur = $donnees2['nom_editeur'];
 
-    $req2 = $newjeu->setId_jeu($donnees['id_jeu']);
-    $req2 = $newjeu->readPlateformeByIdJeu();
+    $req2 = $newjeu->readPlateformeByNomJeu();
     $donnees2 = $req2->fetch();
     $plateforme = $donnees2['nom_plateforme'];
 
-    $req2 = $newjeu->readGenreByIdJeu();
+    $req2 = $newjeu->readGenreByNOmJeu();
     $donnees2 = $req2->fetch();
     $genre = $donnees2['nom_genre'];
 
-    $req2 = $newjeu->readImageByIdJeu();
+    $req2 = $newjeu->readImageByNomJeu();
     $donnees2 = $req2->fetch();
     $jaquette = $donnees2['url_img'];
 
-    $req2 = $newjeu->readVideoByIdJeu();
+    $req2 = $newjeu->readVideoByNomJeu();
     $donnees2 = $req2->fetch();
     $trailer = $donnees2['nom_video'];
 
-    $req2 = $newjeu->readImageByIdJeu();
+    $req2 = $newjeu->readImageByNomJeu();
     $donnees2 = $req2->fetch();
     $image = $donnees2['url_img'];
 
-    $req2 = $newjeu->readVideoByIdJeu();
+    $req2 = $newjeu->readVideoByNomJeu();
     $donnees2 = $req2->fetch();
     $video = $donnees2['nom_video'];
 

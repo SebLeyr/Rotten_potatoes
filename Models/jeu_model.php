@@ -25,10 +25,6 @@
         public function getId_jeu(){
             return $this->id_jeu;
         }
-
-        public function setId_jeu($id_jeu){
-            $this->id_jeu = $id_jeu;
-        }
     
         public function getNom_jeu(){
             return $this->nom_jeu;
@@ -131,8 +127,8 @@
             return $stmt;
         }
 
-        //read platform by game id
-        public function readPlateformeByIdJeu() {
+        //read platform by game name
+        public function readPlateformeByNomJeu() {
             $myQuery = 'SELECT
                             nom_plateforme
                         FROM
@@ -142,16 +138,21 @@
                         ON
                             distribuer.id_plateforme = plateformes.id_plateforme
                         WHERE
-                            distribuer.id_jeu = :id_jeu';
+                            distribuer.id_jeu = (SELECT 
+                                                    id_jeu 
+                                                FROM 
+                                                    '.$this->table.' 
+                                                WHERE 
+                                                    nom_jeu = :nom_jeu)';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam(':id_jeu', $this->id_jeu);
+            $stmt->bindParam(':nom_jeu', $this->nom_jeu);
             $stmt->execute();
             return $stmt;
         }
 
-        //read type by game id
-        public function readGenreByIdJeu() {
+        //read type by game name
+        public function readGenreByNomJeu() {
             $myQuery = 'SELECT
                             nom_genre
                         FROM
@@ -161,16 +162,21 @@
                         ON
                             associer.id_genre = genres.id_genre
                         WHERE
-                            associer.id_jeu = :id_jeu';
+                            associer.id_jeu = (SELECT 
+                                                    id_jeu 
+                                                FROM 
+                                                    '.$this->table.' 
+                                                WHERE 
+                                                    nom_jeu = :nom_jeu)';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam(':id_jeu', $this->id_jeu);
+            $stmt->bindParam(':nom_jeu', $this->nom_jeu);
             $stmt->execute();
             return $stmt;
         }
 
-        //read image by game id
-        public function readImageByIdJeu() {
+        //read image by game name
+        public function readImageByNomJeu() {
             $myQuery = 'SELECT
                             url_img
                         FROM
@@ -180,16 +186,21 @@
                         ON
                             appartenir.id_img = images.id_img
                         WHERE
-                            appartenir.id_jeu = :id_jeu';
+                            appartenir.id_jeu = (SELECT 
+                                                    id_jeu 
+                                                FROM 
+                                                    '.$this->table.' 
+                                                WHERE 
+                                                    nom_jeu = :nom_jeu)';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam(':id_jeu', $this->id_jeu);
+            $stmt->bindParam(':nom_jeu', $this->nom_jeu);
             $stmt->execute();
             return $stmt;
         }
 
-        //read video by game id
-        public function readVideoByIdJeu() {
+        //read video by game name
+        public function readVideoByNomJeu() {
             $myQuery = 'SELECT
                             nom_video
                         FROM
@@ -199,12 +210,53 @@
                         ON
                             contenir.id_video = videos.id_video
                         WHERE
-                            contenir.id_jeu = :id_jeu';
+                            contenir.id_jeu = (SELECT 
+                                                    id_jeu 
+                                                FROM 
+                                                    '.$this->table.' 
+                                                WHERE 
+                                                    nom_jeu = :nom_jeu)';
 
             $stmt = $this->connect->prepare($myQuery);
-            $stmt->bindParam(':id_jeu', $this->id_jeu);
+            $stmt->bindParam(':nom_jeu', $this->nom_jeu);
             $stmt->execute();
             return $stmt;
+        }
+
+        //read studio name by game name
+        public function readStudioByGame() {
+            $myQuery = 'SELECT
+                            nom_studio
+                        FROM
+                            studios
+                        WHERE id_studio = (SELECT
+                                                id_studio
+                                            FROM
+                                                '.$this->table.'
+                                            WHERE
+                                                nom_jeu = :nom_jeu)';
+                $stmt = $this->connect->prepare($myQuery);
+                $stmt->bindParam(':nom_jeu', $this->nom_jeu);
+                $stmt->execute();
+                return $stmt;
+        }
+
+        //read editeur name by game name
+        public function readEditeurByGame() {
+            $myQuery = 'SELECT
+                            nom_editeur
+                        FROM
+                            editeurs
+                        WHERE id_editeur = (SELECT
+                                                id_editeur
+                                            FROM
+                                                '.$this->table.'
+                                            WHERE
+                                                nom_jeu = :nom_jeu)';
+                $stmt = $this->connect->prepare($myQuery);
+                $stmt->bindParam(':nom_jeu', $this->nom_jeu);
+                $stmt->execute();
+                return $stmt;
         }
 
         //update

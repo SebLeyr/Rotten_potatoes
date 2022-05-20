@@ -72,7 +72,7 @@
         //changement email
         if(isset($_POST['newMail'])) {
             $verifNewMail = $verif->valid_donnees($_POST['newMail']);
-            if($verifNewMail != ""){
+            if(filter_var($verifNewMail, FILTER_VALIDATE_EMAIL)){
                 $user->setEmail_user($verifNewMail);
                 
                 $checkMail = $user->verifyMail();
