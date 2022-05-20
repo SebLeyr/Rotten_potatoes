@@ -37,7 +37,7 @@
                 <ul>
                     <li>
                         <label for="newPseudo">Pseudo :</label>
-                        <input type="text" name="newPseudo" maxlength="20" id="newPseudo"/>
+                        <input type="text" name="newPseudo" maxlength="20" id="newPseudo" required/>
                     </li>
                     <li><input type="submit" name="submit" value="Modifier"></li>
                 </ul>

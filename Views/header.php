@@ -37,23 +37,23 @@
                     <ul>
                         <li>
                             <label for="pseudo">Pseudo </label>
-                            <input type="text" name="pseudo" maxlength="20" id="pseudo"/>
+                            <input type="text" name="pseudo" maxlength="20" id="pseudo" required/>
                         </li>
                         <li>
                             <label for="email">E-mail </label>
-                            <input type="email" name="email" id="email"/>
+                            <input type="email" name="email" id="email" required/>
                         </li>
                         <li>
                             <label for="confEmail">Confirmer l'e-mail </label>
-                            <input type="email" name="confEmail" id="confEmail"/>
+                            <input type="email" name="confEmail" id="confEmail" required/>
                         </li>
                         <li>
                             <label for="mdp">Mot de passe </label>
-                            <input type="password" name="mdp" minlength="8" maxlength="25" id="mdp"/>
+                            <input type="password" name="mdp" minlength="8" maxlength="25" id="mdp" required/>
                         </li>
                         <li>
                             <label for="confirmMdp">Confirmer le mot de passe </label>
-                            <input type="password" name="confirmMdp" minlength="8" maxlength="25" id="confirmMdp"/>
+                            <input type="password" name="confirmMdp" minlength="8" maxlength="25" id="confirmMdp" required/>
                         </li>
                         <p><strong><?php echo $log; ?></strong></p>
                         <li>
@@ -81,11 +81,11 @@
                     <ul>
                         <li>
                             <label for="pseudoLog">Pseudo </label>
-                            <input type="text" name="pseudoLog" maxlength="20" id="pseudoLog"/>
+                            <input type="text" name="pseudoLog" maxlength="20" id="pseudoLog" required/>
                         </li>
                         <li>
                             <label for="mdpLog">Mot de passe </label>
-                            <input type="password" name="mdpLog" minlength="8" maxlength="25" id="mdpLog"/>
+                            <input type="password" name="mdpLog" minlength="8" maxlength="25" id="mdpLog" required/>
                         </li>
                         <li>
                             <input type="submit" name="Connec" value="S'identifier">
