@@ -26,7 +26,7 @@
         $pseudo = $user->getPseudo_user();
         $email = $user->getEmail_user();
 
-        //Variable contenant l'affichage des informations du comtpe en HTML pour avoir un affichage uniquement quand l'utilsiateur est connecté
+        //Variable contenant l'affichage des informations du comtpe en HTML pour avoir un affichage uniquement quand l'utilisateur est connecté
         $compte = '
                 <div>
                     <p id="test"><b>Pseudo :</b> '.$pseudo.'</p>
