@@ -8,6 +8,11 @@
         <h1>Rotten Potatoes</h1>
         <input id="search" type="search" placeholder="Rechercher un jeu, un studio...">
         <nav id="menu">
+            <!--<div id="phoneIcon">
+                <div></div>
+                <div></div>
+                <div></div>-->
+            </div>
             <ul>
                 <li><?= $account ?></li>
                 <li><?= $connexion ?></li>

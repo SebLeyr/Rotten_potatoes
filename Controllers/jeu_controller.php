@@ -12,11 +12,8 @@
     $donnees = $req->fetch();
 
     $nom_jeu = $donnees['nom_jeu'];
-
     $date_sortie = $donnees['date_sortie_jeu'];
-
     $nbr_joueurs = $donnees['nombre_de_joueurs'];
-
     $resume = $donnees['resume_jeu'];
 
     //utilisation des fonctions read des différents modèles concernés pour récupérer les données requises en BDD

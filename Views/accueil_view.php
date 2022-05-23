@@ -64,7 +64,7 @@
                     <a href="./Jeu.html">Halo infinite</a>
                 </div>
 
-                <div class="slide">
+                <!--<div class="slide">
                     <img class="cover" src="../images/Solar_Ash.jpg">
                     <div class="note">
                         <img class="imgNote" src="../images/potatoe.png">
@@ -89,7 +89,7 @@
                         <p>note</p>
                     </div>
                     <a href="./Jeu.html">Final Fantasy XIV: Endwalker</a>
-                </div>
+                </div>-->
                 <!--boutton suivant-->
                 <!-- <div class="suivant" onclick="changeslide(1)">&#10095;</div> -->
             </div>
